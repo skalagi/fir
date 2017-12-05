@@ -1,5 +1,6 @@
+import { MatButtonModule, MatButtonToggleModule, MatSnackBarModule } from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatButtonModule, MatButtonToggleModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 
 
@@ -19,7 +20,9 @@ import { Socket } from "./socket";
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatButtonToggleModule,
+    MatSnackBarModule,
     MatButtonModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
