@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ChannelComponent } from './channel/channel.component';
 import { ScreenComponent } from './screen/screen.component';
+import { Socket } from "./socket";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { ScreenComponent } from './screen/screen.component';
     MatButtonModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
-  providers: [],
+  providers: [Socket],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
