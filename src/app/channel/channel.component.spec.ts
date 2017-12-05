@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatButton } from '@angular/material';
 
 import { ChannelComponent } from './channel.component';
 
@@ -19,7 +20,4 @@ describe('ChannelComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
