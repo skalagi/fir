@@ -7,6 +7,11 @@ import { Socket } from "../socket";
   styleUrls: ['./statistics.component.scss']
 })
 export class StatisticsComponent implements OnInit {
+  public currentOnline: number;
+  public todayVisits: number;
+  public totalChanges: number;
+  public totalVisits: number;
+  public todayChanges: number;
 
   constructor(private socket: Socket) { }
 
