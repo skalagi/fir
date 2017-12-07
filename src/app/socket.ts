@@ -2,29 +2,28 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
 import { Subject } from 'rxjs';
+  
+import { $WebSocket, WebSocketSendMode } from 'angular2-websocket/angular2-websocket';
 
 import { environment } from '../environments/environment';
 
 @Injectable()
 export class Socket {
-  public messages: Subject<any> = new Subject();
+  private socket;
 
   constructor(private snack: MatSnackBar, http: HttpClient) {
-    http.get(`${environment.uri}/getEndpoint`).subscribe(socketUri => {
-      console.log(socketUri);
-    });
+    http.get(`${environment.uri}/getEndpoint`).subscribe((socket: any) => {
+      this.socket = new $WebSocket(socket.endpoint);
+      this.socket.onMessage(data => console.log(data));
 
-    this.messages.filter(({ error }) => error)
-      .subscribe(({ error }) => {
-        snack.open(error, 'rozumiem'); //nicer error emblems
+      this.socket.onMessage(({ error }) => {
+        snack.open(error, 'rozumiem'); //TODO nicer error emblems
       });
+    });
   }
 
   public send(msg: any) {
-    if (msg.controller === 'ChangeState') {
-      this.messages.next({ ...msg, controllerResponse: 'OK' });
-    }
-
     this.snack.open(msg.controller, null, { duration: 700 });
+    this.socket.send(msg);
   }
 }
