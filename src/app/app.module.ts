@@ -3,6 +3,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MatListModule } from '@angular/material/list';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
+    MatListModule,
     MatButtonModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
