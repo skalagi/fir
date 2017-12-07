@@ -11,12 +11,14 @@ import { environment } from '../environments/environment';
 import { ChannelComponent } from './channel/channel.component';
 import { ScreenComponent } from './screen/screen.component';
 import { Socket } from "./socket";
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChannelComponent,
-    ScreenComponent
+    ScreenComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
