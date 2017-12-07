@@ -29,7 +29,7 @@ export class Socket {
 
         this.actions.forEach((cb, action) => {
           if (action === message.action) {
-            cb(message);
+            cb(message.value);
           }
         })
       });
