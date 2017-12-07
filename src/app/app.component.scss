@@ -6,6 +6,14 @@
   height: 100vh;  
 }
 
+.screen {
+  display: flex;
+
+  screen {
+    flex-grow: 1;
+  }
+}
+
 .channels {
   margin: 32px;
 }
