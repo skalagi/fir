@@ -2,7 +2,7 @@ import { MatButtonModule, MatButtonToggleModule, MatSnackBarModule } from '@angu
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { Socket } from "./socket";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatButtonModule,
