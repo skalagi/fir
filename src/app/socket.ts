@@ -10,7 +10,7 @@ import { environment } from '../environments/environment';
 @Injectable()
 export class Socket {
   private socket: $WebSocket;
-  private actions: Map<string, Function> = new Map();
+  private actions: Set<any[]> = new Set();
 
   constructor(private snack: MatSnackBar, http: HttpClient) {
     http.get(`${environment.uri}/getEndpoint`).subscribe((socket: any) => {
@@ -42,7 +42,7 @@ export class Socket {
   }
 
   public action(name: string, cb: Function) {
-    this.actions.set(name, cb);
+    this.actions.add([name, cb]);
   }
 
   public send(msg: any) {
