@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { MatButtonModule, MatSnackBarModule } from '@angular/material';
@@ -15,7 +16,7 @@ describe('ChannelComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ChannelComponent],
       providers: [Socket],
-      imports: [MatButtonModule, MatSnackBarModule],
+      imports: [MatButtonModule, MatSnackBarModule, HttpClientModule],
     })
     .compileComponents();
   }));
