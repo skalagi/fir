@@ -28,7 +28,7 @@ export class Socket {
         */
 
         this.actions.forEach((cb, action) => {
-          if (action === message.controller) {
+          if (action === message.action) {
             cb(message);
           }
         })
