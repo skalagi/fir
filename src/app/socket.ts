@@ -14,7 +14,7 @@ export class Socket {
   constructor(private snack: MatSnackBar, http: HttpClient) {
     http.get(`${environment.uri}/getEndpoint`).subscribe((socket: any) => {
       this.socket = new $WebSocket(socket.endpoint);
-      this.socket.onMessage(data => console.log(data));
+      this.socket.onMessage((event: any) => console.log(JSON.parse(event.data)));
 
       this.socket.onMessage(({ error }) => {
         snack.open(error, 'rozumiem'); //TODO nicer error emblems
