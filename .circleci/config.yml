@@ -33,7 +33,7 @@ jobs:
             - "node_modules"
       - add_ssh_keys:
           fingerprints:
-            - "5d:2d:cf:5b:f4:5b:49:fc:22:7d:3b:ac:1a:7c:1b:3c"
+            - "49:de:a9:17:3d:11:2f:9b:b9:4e:49:9e:23:e7:af:96"
       - run:
           name: Deploy if tests pass
           command: npm run deploy
