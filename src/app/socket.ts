@@ -27,9 +27,11 @@ export class Socket {
         }
         */
 
-        this.actions.forEach((cb, action) => {
-          if (action === message.action) {
-            cb(message.value);
+        this.actions.forEach(action => {
+          if (action[0] === message.action) {
+            if (message.controllerResponse ? message.controllerResponse === 'OK' : true) {
+              action[1](message.value);
+            }
           }
         })
       });
