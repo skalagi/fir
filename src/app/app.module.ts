@@ -22,7 +22,6 @@ import { Socket } from "./socket";
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonToggleModule,
     MatSnackBarModule,
     MatButtonModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
