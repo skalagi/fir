@@ -10,6 +10,8 @@ import { AppComponent } from "./app.component";
 import { ScreenComponent } from "./screen/screen.component";
 import { ChannelComponent } from "./channel/channel.component";
 import { Socket } from "./socket";
+import { StatisticsComponent } from "./statistics/statistics.component";
+import { MatListModule } from "@angular/material/list";
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -22,10 +24,12 @@ describe('AppComponent', () => {
         AppComponent,
         ChannelComponent,
         ScreenComponent,
+        StatisticsComponent,
       ],
       providers: [Socket],
       imports: [
         HttpClientModule,
+        MatListModule,
         MatSnackBarModule,
         MatButtonModule,
       ]

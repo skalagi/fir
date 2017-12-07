@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StatisticsComponent } from './statistics.component';
+import { Socket } from "../socket";
+import { HttpClientModule } from "@angular/common/http";
+import { MatListModule } from "@angular/material/list";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 describe('StatisticsComponent', () => {
   let component: StatisticsComponent;
@@ -8,7 +12,13 @@ describe('StatisticsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StatisticsComponent ]
+      declarations: [StatisticsComponent],
+      providers: [Socket],
+      imports: [
+        MatListModule,
+        HttpClientModule,
+        MatSnackBarModule,
+      ]
     })
     .compileComponents();
   }));
