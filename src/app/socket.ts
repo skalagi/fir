@@ -9,21 +9,42 @@ import { environment } from '../environments/environment';
 
 @Injectable()
 export class Socket {
-  private socket;
+  private socket: $WebSocket;
+  private actions: Map<string, Function> = new Map();
 
   constructor(private snack: MatSnackBar, http: HttpClient) {
     http.get(`${environment.uri}/getEndpoint`).subscribe((socket: any) => {
       this.socket = new $WebSocket(socket.endpoint);
-      this.socket.onMessage((event: any) => console.log(JSON.parse(event.data)));
+      this.socket.setSend4Mode(WebSocketSendMode.Direct);
+
+      this.socket.onMessage((event: any) => {
+        const message = JSON.parse(event.data);
+        this.snack.open(`recive ${message.action}`, null, { duration: 700 });
+
+        /*
+        if (error) {
+          snack.open(error, 'rozumiem'); //TODO nicer error emblems
+        }
+        */
+
+        this.actions.forEach((cb, action) => {
+          if (action === message.controller) {
+            cb(message);
+          }
+        })
+      });
 
       this.socket.onMessage(({ error }) => {
-        snack.open(error, 'rozumiem'); //TODO nicer error emblems
       });
     });
   }
 
+  public action(name: string, cb: Function) {
+    this.actions.set(name, cb);
+  }
+
   public send(msg: any) {
-    this.snack.open(msg.controller, null, { duration: 700 });
+    this.snack.open(`send ${ msg.controller }`, null, { duration: 700 });
     this.socket.send(msg);
   }
 }
