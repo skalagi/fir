@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "ng build --progress false --prod --aot && expect -c 'set PASS [exec echo $password] ; spawn scp -o \"StrictHostKeyChecking no\" -P 2207 -r dist flights@188.166.150.160:/ ; expect password ; send \"$PASS\n\" ; interact'",
+    "deploy": "ng build --progress false --prod --aot && expect -c 'spawn scp -o \"StrictHostKeyChecking no\" -P 2207 -r dist flights@188.166.150.160:/ ; expect password ; send \"${password}\n\" ; interact'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
