@@ -37,7 +37,7 @@ jobs:
 
       - run:
           name: expect from apt
-          command: apt update && apt install expect
+          command: sudo apt update && sudo apt install expect
 
       - run:
           name: Deploy if tests pass
