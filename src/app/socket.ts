@@ -20,25 +20,24 @@ export class Socket {
       this.socket.onMessage((event: any) => {
         const message = JSON.parse(event.data);
         this.snack.open(`recive ${message.action}`, null, { duration: 700 });
-
-        /*
-        if (error) {
-          snack.open(error, 'rozumiem'); //TODO nicer error emblems
+       
+        if (message.error) {
+          snack.open(message.error.reason + '', 'rozumiem', { panelClass: 'warn' }); 
+        } else {
+          this.broadcast(message);
         }
-        */
-
-        this.actions.forEach(action => {
-          if (action[0] === message.action) {
-            if (message.controllerResponse ? message.controllerResponse === 'OK' : true) {
-              action[1](message.value);
-            }
-          }
-        })
-      });
-
-      this.socket.onMessage(({ error }) => {
       });
     });
+  }
+
+  private broadcast(message) {
+    this.actions.forEach(action => {
+      if (action[0] === message.action) {
+        if (message.controllerResponse ? message.controllerResponse === 'OK' : true) {
+          action[1](message.value);
+        }
+      }
+    })
   }
 
   public action(name: string, cb: Function) {

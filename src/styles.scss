@@ -7,3 +7,12 @@ $christmas-app-accent: mat-palette($mat-cyan, A200, A100, A400);
 $christmas-app-theme: mat-light-theme($christmas-app-primary, $christmas-app-accent);
 
 @include angular-material-theme($christmas-app-theme);
+
+
+.warn {
+  color: mat-color(mat-palette($mat-red));
+}
+
+.primary {
+  color: mat-color($christmas-app-primary);
+}
