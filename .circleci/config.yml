@@ -36,7 +36,7 @@ jobs:
             - "49:de:a9:17:3d:11:2f:9b:b9:4e:49:9e:23:e7:af:96"
       - run:
           name: Deploy if tests pass
-          command: npm run deploy && scp -o \"StrictHostKeyChecking no\" -P 2207 -r dist flights@188.166.150.160:/
+          command: npm run deploy
 
 workflows:
   version: 2
