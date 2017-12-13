@@ -1,7 +1,14 @@
 <mat-list>
-  <mat-list-item>Łączne zmiany: {{totalChanges}}</mat-list-item>
-  <mat-list-item>Dzisiejsze zmiany: {{todayChanges}}</mat-list-item>
-  <mat-list-item>Łączne wizyt: {{totalVisits}}</mat-list-item>
-  <mat-list-item>Dzisiejsze wizyty: {{todayVisits}}</mat-list-item>
-  <mat-list-item>Aktualnie online: {{ currentOnline }}</mat-list-item>
+  <mat-list-item>
+    <mat-icon matListIcon>settings_input_component</mat-icon>
+    <p matLine>Łączne zmiany: {{totalChanges}}</p>
+    <p matLine>Dzisiejsze zmiany: {{todayChanges}}</p>
+  </mat-list-item>
+
+  <mat-list-item>
+    <mat-icon matListIcon>face</mat-icon>
+    <p matLine>Aktualnie online: {{ currentOnline }}</p>
+    <p matLine>Dzisiejsze wizyty: {{todayVisits}}</p>
+    <p matLine>Łączne wizyt: {{totalVisits}}</p>
+  </mat-list-item>
 </mat-list>
