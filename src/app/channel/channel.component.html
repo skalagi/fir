@@ -1,1 +1,4 @@
-<button mat-raised-button (click)="toggleColor()" [color]="state ? 'primary' : null">{{ label }}</button>
+<button mat-raised-button (click)="toggleColor()" [color]="state ? 'primary' : null">
+  <mat-icon>power</mat-icon>
+  {{ label }}
+</button>
