@@ -1,6 +1,22 @@
 <div class="screen">
   <screen></screen>
-  <statistics></statistics>
+  <div>
+    <mat-list>
+      <mat-list-item>
+        <mat-icon color="primary" matListIcon>https</mat-icon>
+        <p matLine class="primary">Polaczenie z serwerem</p>
+      </mat-list-item>  
+    </mat-list>
+    
+    <statistics></statistics>
+
+    <mat-list>
+      <mat-list-item matTooltipPosition="above" matTooltip="Sterowanie sekwencjami wylaczy tryb sterowania stanem swiatelek.">
+        <mat-icon matListIcon>select_all</mat-icon>
+        <mat-slide-toggle matLine>Sekwencje</mat-slide-toggle>
+      </mat-list-item>
+    </mat-list>
+  </div>
 </div>
 
 <div class="channels">
