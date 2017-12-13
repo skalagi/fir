@@ -19,6 +19,11 @@ export class StatisticsComponent implements OnInit {
     this.socket.action('UpdateStats', (stats) => {
       Object.assign(this, stats);
     });
+
+    this.socket.action('ChangeState', () => {
+      this.totalChanges++;
+      this.todayChanges++;
+    });
   }
 
 }
