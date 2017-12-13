@@ -3,15 +3,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 
-import { MatButtonModule } from "@angular/material/button";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatTooltipModule, MatSlideToggleModule, MatIconModule, MatListModule, MatSnackBarModule, MatButtonModule } from '@angular/material';
 
 import { AppComponent } from "./app.component";
 import { ScreenComponent } from "./screen/screen.component";
 import { ChannelComponent } from "./channel/channel.component";
 import { Socket } from "./socket";
 import { StatisticsComponent } from "./statistics/statistics.component";
-import { MatListModule } from "@angular/material/list";
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -32,6 +30,9 @@ describe('AppComponent', () => {
         MatListModule,
         MatSnackBarModule,
         MatButtonModule,
+        MatTooltipModule,
+        MatIconModule,
+        MatSlideToggleModule,
       ]
     }).compileComponents();
   }));

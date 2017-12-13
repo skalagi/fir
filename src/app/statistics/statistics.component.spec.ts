@@ -1,10 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from "@angular/common/http";
+import { MatIconModule, MatSnackBarModule, MatListModule } from '@angular/material';
 
 import { StatisticsComponent } from './statistics.component';
 import { Socket } from "../socket";
-import { HttpClientModule } from "@angular/common/http";
-import { MatListModule } from "@angular/material/list";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 describe('StatisticsComponent', () => {
   let component: StatisticsComponent;
@@ -18,6 +17,7 @@ describe('StatisticsComponent', () => {
         MatListModule,
         HttpClientModule,
         MatSnackBarModule,
+        MatIconModule,
       ]
     })
     .compileComponents();

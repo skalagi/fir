@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { MatButtonModule, MatSnackBarModule } from '@angular/material';
+import { MatButtonModule, MatSnackBarModule, MatIconModule } from '@angular/material';
 
 import { ChannelComponent } from './channel.component';
 import { Socket } from "../socket";
@@ -16,7 +16,7 @@ describe('ChannelComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ChannelComponent],
       providers: [Socket],
-      imports: [MatButtonModule, MatSnackBarModule, HttpClientModule],
+      imports: [MatButtonModule, MatSnackBarModule, HttpClientModule, MatIconModule],
     })
     .compileComponents();
   }));
