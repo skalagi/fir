@@ -45,7 +45,6 @@ export class Socket {
   }
 
   public send(msg: any) {
-    this.snack.open(`send ${ msg.controller }`, null, { duration: 700 });
     this.socket.send(msg);
   }
 }
