@@ -7,14 +7,18 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
+          key: fir-{{ .Branch }}-{{ checksum "package.json" }}
       - run: npm install
       - save_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
+          key: fir-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
-      - run: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
-      - run: xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
+      - run:
+          name: unit tests
+          command: xvfb-run -a npm run test -- --single-run --no-progress --browser=ChromeNoSandbox
+      - run:
+          name: e2e tests
+          command: xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
       
   deploy:
     working_directory: ~/fir
@@ -23,20 +27,20 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
+          key: fir-{{ .Branch }}-{{ checksum "package.json" }}
       - run:
           name: Install dependencies
           command: npm install
       - save_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package.json" }}
+          key: fir-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - "node_modules"
       - add_ssh_keys:
           fingerprints:
             - "49:de:a9:17:3d:11:2f:9b:b9:4e:49:9e:23:e7:af:96"
       - run:
-          name: Deploy if tests pass
-          command: npm run deploy && scp -o "StrictHostKeyChecking no" -P 2207 -r ./dist flights@188.166.150.160
+          name: deploy
+          command: npm run deploy && scp -o "StrictHostKeyChecking no" -P 2207 -r ./dist flights@188.166.150.160:/
 
 workflows:
   version: 2
