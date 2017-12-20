@@ -1,4 +1,4 @@
 export const environment = {
-  uri: 'http://api.lights.host',
+  uri: 'https://api.lights.host',
   production: true
 };
