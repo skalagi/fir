@@ -10,6 +10,7 @@ import { ScreenComponent } from "./screen/screen.component";
 import { ChannelComponent } from "./channel/channel.component";
 import { Socket } from "./socket";
 import { StatisticsComponent } from "./statistics/statistics.component";
+import { ActionService } from './action.service';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -24,7 +25,7 @@ describe('AppComponent', () => {
         ScreenComponent,
         StatisticsComponent,
       ],
-      providers: [Socket],
+      providers: [Socket, ActionService],
       imports: [
         HttpClientModule,
         MatListModule,

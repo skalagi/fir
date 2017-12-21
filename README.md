@@ -2,4 +2,4 @@
 client for interactive web-app for christmas written with angular
 
 
-code coverage: 83.91%
+code coverage: 78.07%

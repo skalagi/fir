@@ -6,6 +6,7 @@ import { MatButtonModule, MatSnackBarModule, MatIconModule } from '@angular/mate
 
 import { ChannelComponent } from './channel.component';
 import { Socket } from "../socket";
+import { ActionService } from '../action.service';
 
 describe('ChannelComponent', () => {
   let component: ChannelComponent;
@@ -15,7 +16,7 @@ describe('ChannelComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ChannelComponent],
-      providers: [Socket],
+      providers: [Socket, ActionService],
       imports: [MatButtonModule, MatSnackBarModule, HttpClientModule, MatIconModule],
     })
     .compileComponents();

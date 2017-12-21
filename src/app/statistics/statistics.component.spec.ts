@@ -4,6 +4,7 @@ import { MatIconModule, MatSnackBarModule, MatListModule } from '@angular/materi
 
 import { StatisticsComponent } from './statistics.component';
 import { Socket } from "../socket";
+import { ActionService } from '../action.service';
 
 describe('StatisticsComponent', () => {
   let component: StatisticsComponent;
@@ -12,7 +13,7 @@ describe('StatisticsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [StatisticsComponent],
-      providers: [Socket],
+      providers: [Socket, ActionService],
       imports: [
         MatListModule,
         HttpClientModule,
