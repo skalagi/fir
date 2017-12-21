@@ -26,7 +26,7 @@ export class Socket {
         this.snack.open(`recive ${message.action}`, null, { duration: 700 });
 
         if (message.error) {
-          this.snack.open(message.error.reason + '', 'rozumiem', { panelClass: 'warn' });
+          this.snack.open(message.error.reason + '', 'got it', { panelClass: 'warn' });
         } else {
           this.message$.next(message);
         }
