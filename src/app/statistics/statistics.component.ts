@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Socket } from "../socket";
+import { ActionService } from '../action.service';
 
 @Component({
   selector: 'statistics',
@@ -13,14 +14,14 @@ export class StatisticsComponent implements OnInit {
   public totalVisits: number;
   public todayChanges: number;
 
-  constructor(private socket: Socket) { }
+  constructor(private actions: ActionService) { }
 
   ngOnInit() {
-    this.socket.action('UpdateStats', (stats) => {
+    this.actions.action('UpdateStats', (stats) => {
       Object.assign(this, stats);
     });
 
-    this.socket.action('ChangeState', () => {
+    this.actions.action('ChangeState', () => {
       this.totalChanges++;
       this.todayChanges++;
     });

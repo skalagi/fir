@@ -15,6 +15,7 @@ import { ChannelComponent } from './channel/channel.component';
 import { ScreenComponent } from './screen/screen.component';
 import { Socket } from "./socket";
 import { StatisticsComponent } from './statistics/statistics.component';
+import { ActionService } from './action.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
     MatButtonModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
-  providers: [Socket],
+  providers: [Socket, ActionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
