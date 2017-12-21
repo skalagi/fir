@@ -2,5 +2,11 @@ input {
   width: 32px;
   height: 32px;
   border: 0;
+  margin: 0 .25em;
   border-radius: 50%;
+}
+
+:host {
+  display: inline-block;
+  margin: .5em 0;
 }
