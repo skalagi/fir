@@ -13,12 +13,12 @@
     <mat-list>
       <mat-list-item matTooltipPosition="above" matTooltip="Sequences mode will disable state change mode">
         <mat-icon matListIcon>select_all</mat-icon>
-        <mat-slide-toggle matLine>Sequences</mat-slide-toggle>
+        <mat-slide-toggle matLine [(ngModel)]="sequences">Sequences</mat-slide-toggle>
       </mat-list-item>
     </mat-list>
   </div>
 </div>
 
 <div class="channels">
-  <channel *ngFor="let channel of [0, 1, 2, 3]" [identity]="channel"></channel>
+  <channel *ngFor="let channel of channels" [identity]="channel.identity" [label]="channel.label"></channel>
 </div>
