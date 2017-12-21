@@ -11,6 +11,7 @@ import { ChannelComponent } from "./channel/channel.component";
 import { Socket } from "./socket";
 import { StatisticsComponent } from "./statistics/statistics.component";
 import { ActionService } from './action.service';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -29,6 +30,7 @@ describe('AppComponent', () => {
       imports: [
         HttpClientModule,
         MatListModule,
+        FormsModule,
         MatSnackBarModule,
         MatButtonModule,
         MatTooltipModule,

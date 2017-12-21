@@ -5,9 +5,9 @@
       <mat-list-item>
         <mat-icon color="primary" matListIcon>https</mat-icon>
         <p matLine class="primary">Server connection</p>
-      </mat-list-item>  
+      </mat-list-item>
     </mat-list>
-    
+
     <statistics></statistics>
 
     <mat-list>
@@ -19,8 +19,8 @@
   </div>
 </div>
 
-<div class="channels" *ngIf="!sequences">
-  <channel *ngFor="let channel of channels" [identity]="channel.identity" [label]="channel.label"></channel>
+<div class="channels">
+  <channel *ngFor="let channel of channels" [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
 </div>
 
 <sequencer *ngIf="sequences"></sequencer>
