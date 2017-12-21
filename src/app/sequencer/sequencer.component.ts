@@ -14,16 +14,16 @@ export interface Color {
 export class SequencerComponent implements OnInit {
   public colors: Color[] = [];
 
-  private color() {
-    return { hex: '#000', delay: null };
+  private color(hex) {
+    return { hex, delay: null };
   }
 
   public setColor(i, hex) {
     this.colors[i].hex = hex;
   }
 
-  public addColor() {
-    this.colors.push(this.color());
+  public addColor() {    
+    this.colors.push(this.color(`#${ Math.floor(Math.random()*16777215).toString(16) }`));
   }
 
   ngOnInit() {
