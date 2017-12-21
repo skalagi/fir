@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+
+import { environment } from '../environments/environment';
 import { Socket } from './socket';
 
 @Injectable()
@@ -7,6 +9,10 @@ export class ActionService {
 
   constructor(private socket: Socket) {
     socket.message$.subscribe(action => this.broadcast(action));
+
+    this.action('ServerRestart', action => {
+      this.socket.restart();
+    });
   }
 
   private broadcast(message) {
