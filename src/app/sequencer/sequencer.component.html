@@ -1,0 +1,8 @@
+<input *ngFor="let color of colors; let i = index"
+        [style.background]="color.hex"
+        (colorPickerChange)="setColor(i, $event)"
+        [colorPicker]="color.hex"
+        class="mat-elevation-z1"
+        cpPosition="top" />
+
+<button (click)="addColor()">add color</button>
