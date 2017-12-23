@@ -1,26 +1,24 @@
+<screen></screen>
+
 <div class="screen">
-  <screen></screen>
   <div>
     <mat-list>
       <mat-list-item>
         <mat-icon color="primary" matListIcon>https</mat-icon>
         <p matLine class="primary">Server connection</p>
       </mat-list-item>
-    </mat-list>
-
-    <statistics></statistics>
-
-    <mat-list>
       <mat-list-item matTooltipPosition="above" matTooltip="Sequences mode will disable state change mode">
-        <mat-icon matListIcon>select_all</mat-icon>
+        <mat-icon matListIcon [color]="sequences ? 'accent' : ''">select_all</mat-icon>
         <mat-slide-toggle matLine [(ngModel)]="sequences">Sequences</mat-slide-toggle>
       </mat-list-item>
     </mat-list>
+
+    <statistics></statistics>
+  </div>
+  <div>
+    <div class="channels">
+      <channel *ngFor="let channel of channels" [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
+    </div>
+    <sequencer [style.display]="sequences ? '' : 'none'"></sequencer>
   </div>
 </div>
-
-<div class="channels">
-  <channel *ngFor="let channel of channels" [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
-</div>
-
-<sequencer *ngIf="sequences"></sequencer>
