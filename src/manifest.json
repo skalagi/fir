@@ -1,12 +1,15 @@
 {
   "name": "Fir",
   "short_name": "Fir",
+  "start_url": "./?utm_source=web_app_manifest",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#4caf50",
+  "description": "Client named fir which provide controls for christmas lights",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "192x192"
+      "sizes": "192x192 512x512"
     }
-  ],
-  "display": "standalone",
-  "start_url": "./?utm_source=web_app_manifest"
+  ]
 }
