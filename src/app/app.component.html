@@ -1,5 +1,6 @@
 <screen></screen>
 
+<mat-progress-bar *ngIf="networkStatus != 'connection established'" mode="indeterminate"></mat-progress-bar>
 <mat-drawer-container>
   <mat-drawer #drawer [mode]="drawerMode">
     <mat-list>
