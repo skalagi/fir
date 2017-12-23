@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public sequences: boolean = false;
+  public sequences = false;
   public channels: any[] = [];
 
   constructor(private http: HttpClient) {}
