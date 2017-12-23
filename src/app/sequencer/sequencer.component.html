@@ -1,5 +1,5 @@
 <mat-card [ngStyle]="{ 'border-top': '.35em solid ' + currentColor }">
-  <mat-card-title *ngIf="!active && colorName">
+  <mat-card-title *ngIf="!active && colorName?.length">
     Current lights color is {{ colorName }}
   </mat-card-title>
   <mat-card-subtitle *ngIf="active">
