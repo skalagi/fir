@@ -8,7 +8,7 @@
   "description": "Client named fir which provide controls for christmas lights",
   "icons": [
     {
-      "src": "assets/favicon.png",
+      "src": "favicon.png",
       "sizes": "256x256",
       "type": "image/png"
     },
