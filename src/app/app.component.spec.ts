@@ -15,6 +15,7 @@ import { SequencerComponent } from "./sequencer/sequencer.component";
 import { ActionService } from './action.service';
 import { FormsModule } from '@angular/forms';
 import { materialModules } from './app.module';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -32,6 +33,7 @@ describe('AppComponent', () => {
       ],
       providers: [Socket, ActionService],
       imports: [
+        NoopAnimationsModule,
         HttpClientModule,
         ColorPickerModule,
         ...materialModules,
