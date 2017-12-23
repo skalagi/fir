@@ -1,5 +1,5 @@
 # fir [![CircleCI](https://circleci.com/gh/skalagi/fir.svg?style=svg)](https://circleci.com/gh/skalagi/fir)
-client for interactive web-app for christmas written with angular
 
+Client written with angular named fir which provide controls for christmas lights.
 
-code coverage: 78.07%
+code coverage: 81.29%
