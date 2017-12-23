@@ -48,8 +48,11 @@ export class SequencerComponent implements OnInit {
     this.colors.push(this.color(`#${ Math.floor(Math.random()*16777215).toString(16) }`));
   }
 
-  public remove(i) {
+  public removeColor(i) {
     console.log(i);
+    if (this.colors.length > 1) {
+      this.colors.pop();
+    }
   }
 
   public send() {
