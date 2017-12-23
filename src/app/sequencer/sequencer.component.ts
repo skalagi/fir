@@ -31,7 +31,7 @@ export interface Color {
 })
 export class SequencerComponent implements OnInit {
   constructor(private actions: ActionService) { }
-  @Input() active;
+  @Input() active: boolean;
   public colors: Color[] = [];
   public currentColor: string;
   public colorName: string;
