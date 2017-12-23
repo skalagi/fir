@@ -1,4 +1,4 @@
-import { MatButtonModule, MatButtonToggleModule, MatSlideToggleModule, MatListModule, MatSnackBarModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import { MatButtonModule, MatButtonToggleModule, MatSlideToggleModule, MatListModule, MatSnackBarModule, MatIconModule, MatTooltipModule, MatInputModule, MatCardModule, MatProgressBar, MatProgressBarModule, MatToolbarModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -28,9 +28,13 @@ import { SequencerComponent } from './sequencer/sequencer.component';
   imports: [
     BrowserModule,
     FormsModule,
+    MatInputModule,
+    MatCardModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatToolbarModule,
     MatTooltipModule,
     MatSlideToggleModule,
     MatSnackBarModule,
