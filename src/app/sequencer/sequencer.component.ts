@@ -27,6 +27,6 @@ export class SequencerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.addColor();
+    this.addColor();     this.actions.action('ChangeColor', (color) => {       this.currentColor = color.hex;     });
   }
 }
