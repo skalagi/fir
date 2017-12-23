@@ -20,8 +20,6 @@ export class AppComponent {
 
   constructor(private http: HttpClient, private media: ObservableMedia) {
     media.subscribe(({ mqAlias }) => {
-      console.log(mqAlias);
-
       this.columns = mqAlias == 'xs' ? 2 : 4;
       if (mqAlias == 'sm' || mqAlias == 'xs') {
         this.drawerMode = 'push';
