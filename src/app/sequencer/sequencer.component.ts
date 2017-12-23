@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
 import { ActionService } from '../action.service';
 
@@ -13,7 +13,8 @@ export interface Color {
   styleUrls: ['./sequencer.component.scss']
 })
 export class SequencerComponent implements OnInit {
-  constructor(private actions: ActionService) {}
+  constructor(private actions: ActionService) { }
+  @Input() active;
   public colors: Color[] = [];
   public currentColor: string;
 

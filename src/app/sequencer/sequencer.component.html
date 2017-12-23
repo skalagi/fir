@@ -1,5 +1,5 @@
 <mat-card [ngStyle]="{ 'border-top': '.35em solid ' + currentColor }">
-  <mat-card-subtitle>
+  <mat-card-subtitle *ngIf="active">
     <input *ngFor="let color of colors; let i = index"
            [style.background]="color.hex"
            (colorPickerChange)="setColor(i, $event)"
@@ -9,7 +9,7 @@
            class="mat-elevation-z1"
            cpPosition="top" />
   </mat-card-subtitle>
-  <mat-card-actions>
+  <mat-card-actions *ngIf="active">
     <button mat-button (click)="addColor()">add color</button>
     <button mat-button (click)="send()">send</button>
   </mat-card-actions>
