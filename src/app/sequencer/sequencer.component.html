@@ -5,11 +5,11 @@
   </mat-card-title>
   <mat-card-subtitle *ngIf="active">
     <input *ngFor="let color of colors; let i = index"
-           [style.background]="color.hex"
+           [style.background]="rgb(color.rgb)"
+           [colorPicker]="rgb(color.rgb)"
            (colorPickerChange)="setColor(i, $event)"
-           (doubleclick)="remove(i)"
-           [colorPicker]="color.hex"
-           cpRemoveColorButtonClass="r"
+           cpAlphaChannel="disabled"
+           cpOutputFormat="rgba"
            class="mat-elevation-z1" />
     <p>Create lights sequence or pick just one color you like most.</p>
     <p *ngIf="colorName?.length">Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span></p>

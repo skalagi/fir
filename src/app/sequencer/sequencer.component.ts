@@ -3,29 +3,9 @@ import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
 import { ActionService } from '../action.service';
 import * as colors from 'color-name';
 
-function hexToRgb(hex) {
-  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
-  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-  hex = hex.replace(shorthandRegex, function (m, r, g, b) {
-    return r + r + g + g + b + b;
-  });
-
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result ? {
-    r: parseInt(result[1], 16),
-    g: parseInt(result[2], 16),
-    b: parseInt(result[3], 16)
-  } : null;
-}
-
-function rgbToHex(rgb) {
-  return "#" + ((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1);
-}
-
-
 export interface Color {
   delay: number;
-  hex: string;
+  rgb: number[];
 }
 
 @Component({
@@ -40,19 +20,23 @@ export class SequencerComponent implements OnInit {
   public currentColor: string;
   public colorName: string;
 
-  private color(hex) {
-    return { hex, delay: null };
+  private color(rgb) {
+    return { rgb, delay: null };
   }
 
-  public setColor(i, hex) {
-    this.colors[i].hex = hex;
+  public setColor(i, rgbString) {
+    this.colors[i].rgb = rgbString.slice(4, -1).split(',');
+  }
+
+  rgb(rgb) {
+    return `rgb(${ rgb[0] }, ${ rgb[1] }, ${ rgb[2] })`
   }
 
   public addColor() {
     const color = Math.round(Math.random() * 148);
     const colorName = Object.keys(colors)[color];
     
-    this.colors.push(this.color(rgbToHex(colors[colorName])));
+    this.colors.push(this.color(colors[colorName]));
   }
 
   public removeColor(i) {
