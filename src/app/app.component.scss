@@ -13,3 +13,7 @@ mat-drawer-container {
 .channels {
   margin: 32px;
 }
+
+mat-drawer, mat-drawer-container {
+  background: none;
+}
