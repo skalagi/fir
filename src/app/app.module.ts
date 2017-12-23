@@ -1,4 +1,4 @@
-import { MatButtonModule, MatButtonToggleModule, MatSlideToggleModule, MatListModule, MatSnackBarModule, MatIconModule, MatTooltipModule, MatInputModule, MatCardModule, MatProgressBar, MatProgressBarModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatButtonToggleModule, MatSlideToggleModule, MatListModule, MatSnackBarModule, MatIconModule, MatTooltipModule, MatInputModule, MatCardModule, MatProgressBar, MatProgressBarModule, MatToolbarModule, MatGridListModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,6 +21,7 @@ export const materialModules = [
   MatProgressBarModule,
   MatToolbarModule,
   MatTooltipModule,
+  MatGridListModule,
   MatSlideToggleModule,
   MatSnackBarModule,
   MatListModule,

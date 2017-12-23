@@ -16,9 +16,11 @@
     <statistics></statistics>
   </div>
   <div>
-    <div class="channels">
-      <channel *ngFor="let channel of channels" [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
-    </div>
     <sequencer [active]="sequences"></sequencer>
+    <mat-grid-list class="channels" cols="4" [rowHeight]="sequences ? '2.4em' : '6em'">
+      <mat-grid-tile *ngFor="let channel of channels">
+        <channel [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
 </div>
