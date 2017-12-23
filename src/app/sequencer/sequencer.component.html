@@ -1,8 +1,16 @@
-<input *ngFor="let color of colors; let i = index"
-        [style.background]="color.hex"
-        (colorPickerChange)="setColor(i, $event)"
-        [colorPicker]="color.hex"
-        class="mat-elevation-z1"
-        cpPosition="top" />
-
-<button (click)="addColor()">add color</button>
+<mat-card [ngStyle]="{ 'border-top': '.35em solid ' + currentColor }">
+  <mat-card-subtitle>
+    <input *ngFor="let color of colors; let i = index"
+           [style.background]="color.hex"
+           (colorPickerChange)="setColor(i, $event)"
+           (doubleclick)="remove(i)"
+           [colorPicker]="color.hex"
+           cpRemoveColorButtonClass="r"
+           class="mat-elevation-z1"
+           cpPosition="top" />
+  </mat-card-subtitle>
+  <mat-card-actions>
+    <button mat-button (click)="addColor()">add color</button>
+    <button mat-button (click)="send()">send</button>
+  </mat-card-actions>
+</mat-card>
