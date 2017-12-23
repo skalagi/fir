@@ -1,17 +1,13 @@
 :host {
-  display: inline-flex;
+  display: flex;
   flex-flow: column;
   align-items: center;
   background: rgba(255, 255, 255, .8);
-  margin: auto;
+  margin: 0 auto;
 }
 
-.screen {
-  display: flex;
-
-  screen {
-    flex-grow: 1;
-  }
+mat-drawer-container {
+  width: 100%;
 }
 
 .channels {

@@ -1,4 +1,4 @@
-import { MatButtonModule, MatButtonToggleModule, MatSlideToggleModule, MatListModule, MatSnackBarModule, MatIconModule, MatTooltipModule, MatInputModule, MatCardModule, MatProgressBar, MatProgressBarModule, MatToolbarModule, MatGridListModule } from '@angular/material';
+import { MatButtonModule, MatButtonToggleModule, MatSlideToggleModule, MatListModule, MatSnackBarModule, MatIconModule, MatTooltipModule, MatInputModule, MatCardModule, MatProgressBar, MatProgressBarModule, MatToolbarModule, MatGridListModule, MatSidenavModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,6 +21,7 @@ import { SequencerComponent } from './sequencer/sequencer.component';
 export const materialModules = [
   MatProgressBarModule,
   MatToolbarModule,
+  MatSidenavModule,
   MatTooltipModule,
   MatGridListModule,
   FlexLayoutModule,
