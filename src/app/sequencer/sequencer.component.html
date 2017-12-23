@@ -1,4 +1,4 @@
-<mat-card class="mat-elevation-z0" [ngStyle]="{ 'border-top': '.35em solid ' + currentColor }">
+<mat-card class="mat-elevation-z0" [ngStyle]="{ 'border-top': '.35em solid ' + currentColor, background: active ? '' : 'none' }">
   <mat-card-title *ngIf="!active">
     <span [ngStyle]="{ color: colorName ? '' : currentColor }">Current lights color</span>
     <span *ngIf="colorName?.length" class="color-name" [ngStyle]="{ color: colorName }">is {{ colorName }}</span>
