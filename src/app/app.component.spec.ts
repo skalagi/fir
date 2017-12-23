@@ -14,6 +14,7 @@ import { StatisticsComponent } from "./statistics/statistics.component";
 import { SequencerComponent } from "./sequencer/sequencer.component";
 import { ActionService } from './action.service';
 import { FormsModule } from '@angular/forms';
+import { materialModules } from './app.module';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -33,13 +34,8 @@ describe('AppComponent', () => {
       imports: [
         HttpClientModule,
         ColorPickerModule,
-        MatListModule,
+        ...materialModules,
         FormsModule,
-        MatSnackBarModule,
-        MatButtonModule,
-        MatTooltipModule,
-        MatIconModule,
-        MatSlideToggleModule,
       ]
     }).compileComponents();
   }));

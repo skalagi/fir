@@ -33,7 +33,7 @@ describe('ChannelComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  /*  ehh,.. mock getChannels
+  /*  ehh,.. mock getChannels 
   it('should has label text', function () {
     let buttonText = de.query(By.css('button')).nativeElement.innerText;
 
