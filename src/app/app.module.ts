@@ -17,6 +17,19 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { ActionService } from './action.service';
 import { SequencerComponent } from './sequencer/sequencer.component';
 
+export const materialModules = [
+  MatProgressBarModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatListModule,
+  MatIconModule,
+  MatButtonModule,
+  MatInputModule,
+  MatCardModule,
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,19 +41,10 @@ import { SequencerComponent } from './sequencer/sequencer.component';
   imports: [
     BrowserModule,
     FormsModule,
-    MatInputModule,
-    MatCardModule,
+    ...materialModules,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatProgressBarModule,
-    MatToolbarModule,
-    MatTooltipModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatListModule,
-    MatIconModule,
-    MatButtonModule,
     ColorPickerModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
