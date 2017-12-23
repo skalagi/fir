@@ -1,6 +1,6 @@
 <mat-card class="mat-elevation-z0" [ngStyle]="{ 'border-top': '.35em solid ' + currentColor }">
   <mat-card-title *ngIf="!active && colorName?.length">
-    Current lights color is {{ colorName }}
+    Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span>
   </mat-card-title>
   <mat-card-subtitle *ngIf="active">
     <input *ngFor="let color of colors; let i = index"
@@ -12,6 +12,7 @@
            class="mat-elevation-z1"
            cpPosition="top" />
     <p>Create lights sequence or pick just one color you like most.</p>
+    <p *ngIf="colorName?.length">Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span></p>
   </mat-card-subtitle>
   <mat-card-actions *ngIf="active">
     <button mat-button (click)="addColor()">add color</button>
