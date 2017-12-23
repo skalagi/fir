@@ -17,14 +17,16 @@
     <statistics></statistics>
   </mat-drawer>
   <mat-drawer-content>
-    <button mat-icon-button (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
     <sequencer [active]="sequences"></sequencer>
+
     <mat-grid-list [ngStyle]="{ width: hostWidth ? '' : '35em' }" class="channels" [cols]="columns" [rowHeight]="sequences ? '2.4em' : '6em'">
       <mat-grid-tile *ngFor="let channel of channels">
         <channel [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
       </mat-grid-tile>
     </mat-grid-list>
+
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
   </mat-drawer-content>
 </mat-drawer-container>
