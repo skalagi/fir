@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 
@@ -22,6 +23,7 @@ export const materialModules = [
   MatToolbarModule,
   MatTooltipModule,
   MatGridListModule,
+  FlexLayoutModule,
   MatSlideToggleModule,
   MatSnackBarModule,
   MatListModule,

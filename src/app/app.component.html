@@ -17,7 +17,7 @@
   </div>
   <div>
     <sequencer [active]="sequences"></sequencer>
-    <mat-grid-list class="channels" cols="4" [rowHeight]="sequences ? '2.4em' : '6em'">
+    <mat-grid-list [ngStyle]="{ width: columns < 3 ? '' : '35em' }" class="channels" [cols]="columns" [rowHeight]="sequences ? '2.4em' : '6em'">
       <mat-grid-tile *ngFor="let channel of channels">
         <channel [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
       </mat-grid-tile>
