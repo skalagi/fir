@@ -16,3 +16,9 @@ $christmas-app-theme: mat-light-theme($christmas-app-primary, $christmas-app-acc
 .primary {
   color: mat-color($christmas-app-primary);
 }
+
+body {
+  margin: 0;
+  background-image: url("https://cdn.pixabay.com/photo/2017/10/28/12/57/winter-2896970_960_720.jpg");
+  background-size: cover;
+}
