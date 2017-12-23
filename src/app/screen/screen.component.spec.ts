@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ScreenComponent } from './screen.component';
+import { materialModules } from '../app.module';
 
 describe('ScreenComponent', () => {
   let component: ScreenComponent;
@@ -8,7 +9,8 @@ describe('ScreenComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScreenComponent ]
+      declarations: [ScreenComponent],
+      imports: materialModules,
     })
     .compileComponents();
   }));
