@@ -1,6 +1,7 @@
 <mat-card class="mat-elevation-z0" [ngStyle]="{ 'border-top': '.35em solid ' + currentColor }">
-  <mat-card-title *ngIf="!active && colorName?.length">
-    Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span>
+  <mat-card-title *ngIf="!active">
+    <span [ngStyle]="{ color: colorName ? currentColor : '' }">Current lights color</span>
+    <span *ngIf="colorName?.length" class="color-name" [ngStyle]="{ color: colorName }">is {{ colorName }}</span>
   </mat-card-title>
   <mat-card-subtitle *ngIf="active">
     <input *ngFor="let color of colors; let i = index"
