@@ -1,5 +1,10 @@
 button {
   height: 8em;
+  transition: .4s ease;
+}
+
+button.just-show {
+  height: 2.4em;
 }
 
 mat-icon {
@@ -7,3 +12,4 @@ mat-icon {
   height: 40px;
   font-size: 40px;
 }
+
