@@ -19,6 +19,6 @@
     <div class="channels">
       <channel *ngFor="let channel of channels" [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
     </div>
-    <sequencer [style.display]="sequences ? '' : 'none'"></sequencer>
+    <sequencer [active]="sequences"></sequencer>
   </div>
 </div>
