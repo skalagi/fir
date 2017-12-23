@@ -1,4 +1,7 @@
 <mat-card [ngStyle]="{ 'border-top': '.35em solid ' + currentColor }">
+  <mat-card-title *ngIf="!active && colorName">
+    Current lights color is {{ colorName }}
+  </mat-card-title>
   <mat-card-subtitle *ngIf="active">
     <input *ngFor="let color of colors; let i = index"
            [style.background]="color.hex"
@@ -8,6 +11,7 @@
            cpRemoveColorButtonClass="r"
            class="mat-elevation-z1"
            cpPosition="top" />
+    <p>Create lights sequence or pick just one color you like most.</p>
   </mat-card-subtitle>
   <mat-card-actions *ngIf="active">
     <button mat-button (click)="addColor()">add color</button>
