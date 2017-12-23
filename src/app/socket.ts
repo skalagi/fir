@@ -6,6 +6,7 @@ import { Subject } from 'rxjs';
 import { $WebSocket, WebSocketSendMode } from 'angular2-websocket/angular2-websocket';
 
 import { environment } from '../environments/environment';
+import { take } from 'rxjs/operators';
 
 @Injectable()
 export class Socket {
@@ -17,6 +18,10 @@ export class Socket {
   }
 
   private init() {
+    this.message$.pipe(take(1)).subscribe(() => {
+      document.body.style.backgroundImage = 'url("assets/winter.jpg")';
+    });
+
     this.http.get(`${environment.uri}/getEndpoint`).subscribe((socket: any) => {
       this.socket = new $WebSocket(socket.endpoint);
       this.socket.setSend4Mode(WebSocketSendMode.Direct);
