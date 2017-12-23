@@ -19,7 +19,7 @@ $christmas-app-theme: mat-light-theme($christmas-app-primary, $christmas-app-acc
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   background-size: cover;
