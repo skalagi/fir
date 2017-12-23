@@ -18,6 +18,10 @@ function hexToRgb(hex) {
   } : null;
 }
 
+function rgbToHex(rgb) {
+  return "#" + ((1 << 24) + (rgb[0] << 16) + (rgb[1] << 8) + rgb[2]).toString(16).slice(1);
+}
+
 
 export interface Color {
   delay: number;
@@ -44,8 +48,11 @@ export class SequencerComponent implements OnInit {
     this.colors[i].hex = hex;
   }
 
-  public addColor() {    
-    this.colors.push(this.color(`#${ Math.floor(Math.random()*16777215).toString(16) }`));
+  public addColor() {
+    const color = Math.round(Math.random() * 148);
+    const colorName = Object.keys(colors)[color];
+    
+    this.colors.push(this.color(rgbToHex(colors[colorName])));
   }
 
   public removeColor(i) {
