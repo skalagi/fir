@@ -1,9 +1,12 @@
+defaults: &defaults
+  working_directory: ~/fir
+  docker:
+    - image: circleci/node:6-browsers
+
 version: 2
 jobs:
   build:
-    working_directory: ~/fir
-    docker:
-      - image: circleci/node:6-browsers
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:
@@ -21,9 +24,7 @@ jobs:
           command: xvfb-run -a npm run e2e -- --no-progress --config=protractor-ci.conf.js
       
   deploy:
-    working_directory: ~/fir
-    docker:
-      - image: circleci/node:6-browsers
+    <<: *defaults
     steps:
       - checkout
       - restore_cache:

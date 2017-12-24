@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
   
 import { $WebSocket, WebSocketSendMode } from 'angular2-websocket/angular2-websocket';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { take } from 'rxjs/operators';
 
 @Injectable()

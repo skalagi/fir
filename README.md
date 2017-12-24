@@ -2,4 +2,4 @@
 
 Client written with angular named fir which provide controls for christmas lights.
 
-code coverage: 81.29%
+code coverage: 86.1%
