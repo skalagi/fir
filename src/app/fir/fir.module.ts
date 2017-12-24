@@ -10,7 +10,8 @@ import {
   MatListModule,
   MatSlideToggleModule,
   MatGridListModule,
-  MatButtonModule
+  MatButtonModule,
+  MatToolbarModule
 } from '@angular/material';
 
 import { StatisticsModule } from '../statistics/statistics.module';
@@ -33,6 +34,7 @@ import { FirComponent } from './fir.component';
     MatIconModule,
     MatListModule,
     MatSlideToggleModule,
+    MatToolbarModule,
     MatGridListModule,
     FlexLayoutModule,
     FormsModule,
