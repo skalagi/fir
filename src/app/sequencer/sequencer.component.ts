@@ -21,7 +21,7 @@ export class SequencerComponent implements OnInit {
   public colorName: string;
 
   private color(rgb) {
-    return { rgb, delay: null };
+    return { rgb, duration: null };
   }
 
   public setColor(i, rgbString) {
