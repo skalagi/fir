@@ -4,7 +4,7 @@ import { ActionService } from '../action.service';
 import * as colors from 'color-name';
 
 export interface Color {
-  delay: number;
+  duration: number;
   rgb: number[];
 }
 
