@@ -1,7 +1,7 @@
-<mat-card class="mat-elevation-z0">
-  <mat-tab-group *ngIf="active" dynamicHeight="true">
+<mat-card class="mat-elevation-z0" *ngIf="active">
+  <mat-tab-group dynamicHeight="true">
     <mat-tab label="sequence">
-      <mat-card-subtitle *ngIf="active">
+      <mat-card-subtitle>
         <p>Create lights sequence or pick just one color you like most.</p>
         <p *ngIf="colorName?.length">Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span></p>
       </mat-card-subtitle>
