@@ -6,16 +6,22 @@
 
   <mat-tab-group dynamicHeight="true">
     <mat-tab label="sequence">
-      <p>Sequences length is {{ colors.length }}</p>
-      <button mat-button (click)="addColor()">add color</button>
-      <button mat-button (click)="removeColor()">remove color</button>
-      <button mat-button (click)="send()">send</button>
+      <mat-card-subtitle>Sequences length is {{ colors.length }}</mat-card-subtitle>
+      <button mat-button (click)="send()">Now you can <span class="accent">send</span> sequence</button>
+      <button mat-button (click)="addColor()">or add another color</button>
     </mat-tab>
 
     <mat-tab class="color" *ngFor="let color of colors; let i = index">
       <ng-template mat-tab-label>
-        <div class="color-label" [style.background]="rgb(color.rgb)"></div>
+        <div class="color-label" [style.background]="rgb(color.rgb)">
+          <span>{{ i + 1 }}</span>
+        </div>
       </ng-template>
+
+      <mat-toolbar>
+        <button mat-button (click)="backToSequence()">back to sequence menu</button>
+      </mat-toolbar>
+
       <input [colorPicker]="rgb(color.rgb)"
              cpDialogDisplay="inline" [cpToggle]="true"
              (colorPickerChange)="setColor(i, $event)"
