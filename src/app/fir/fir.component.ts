@@ -4,15 +4,15 @@ import { ObservableMedia } from '@angular/flex-layout';
 import { MatSidenav, MatDrawer } from '@angular/material';
 import { take } from 'rxjs/operators';
 
-import { environment } from '../environments/environment';
-import { Socket } from './action/socket';
+import { environment } from '../../environments/environment';
+import { Socket } from '../action/socket';
 
 @Component({
-  selector: 'root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'fir',
+  templateUrl: './fir.component.html',
+  styleUrls: ['./fir.component.scss'],
 })
-export class AppComponent {
+export class FirComponent {
   public sequences = true;
   public live = true;
   public networkStatus = 'finding way to the house';
