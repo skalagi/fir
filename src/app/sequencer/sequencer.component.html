@@ -30,7 +30,8 @@
                cpAlphaChannel="disabled" cpOutputFormat="rgba" />
 
         <mat-form-field>
-          <input matInput [(ngModel)]="color.duration" name="duration" type="number" placeholder="duration">
+          <input matInput [(ngModel)]="color.duration" max="10" step=".1" min=".1" name="duration" type="number" placeholder="duration">
+          <span matSuffix>s</span>
         </mat-form-field>
       </div>      
     </mat-tab>

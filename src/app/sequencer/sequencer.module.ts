@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { MatCardModule, MatInputModule, MatTabsModule, MatToolbarModule, MatButtonModule } from '@angular/material';
+import { MatCardModule, MatInputModule, MatTabsModule, MatToolbarModule, MatButtonModule, MatFormFieldModule } from '@angular/material';
 
 import { SequencerComponent } from './sequencer.component';
 import { ActionModule } from '../action/action.module';
@@ -15,6 +15,7 @@ import { ActionModule } from '../action/action.module';
     FormsModule,
     MatCardModule,
     MatButtonModule,
+    MatFormFieldModule,
     MatTabsModule,
     MatInputModule,
     MatToolbarModule,
