@@ -12,7 +12,7 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  public sequences = false;
+  public sequences = true;
   public networkStatus = 'finding way to the house';
   public channels: any[] = [];
   public drawerMode = 'side';
