@@ -13,6 +13,7 @@ import { take } from 'rxjs/operators';
 })
 export class AppComponent {
   public sequences = true;
+  public live = true;
   public networkStatus = 'finding way to the house';
   public channels: any[] = [];
   public drawerMode = 'side';
