@@ -6,16 +6,16 @@ import { By } from '@angular/platform-browser';
 
 import { MatTooltipModule, MatSlideToggleModule, MatIconModule, MatListModule, MatSnackBarModule, MatButtonModule } from '@angular/material';
 
+import { FormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from "./app.component";
 import { ScreenComponent } from "./screen/screen.component";
 import { ChannelComponent } from "./channel/channel.component";
-import { Socket } from "./socket";
 import { StatisticsComponent } from "./statistics/statistics.component";
 import { SequencerComponent } from "./sequencer/sequencer.component";
-import { ActionService } from './action.service';
-import { FormsModule } from '@angular/forms';
 import { materialModules } from './app.module';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ActionModule } from './action/action.module';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -31,12 +31,12 @@ describe('AppComponent', () => {
         StatisticsComponent,
         SequencerComponent,
       ],
-      providers: [Socket, ActionService],
       imports: [
         NoopAnimationsModule,
         HttpClientModule,
         ColorPickerModule,
         ...materialModules,
+        ActionModule,
         FormsModule,
       ]
     }).compileComponents();

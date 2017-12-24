@@ -1,10 +1,11 @@
 import { Component, HostBinding, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
 import { ObservableMedia } from '@angular/flex-layout';
-import { Socket } from './socket';
 import { MatSidenav, MatDrawer } from '@angular/material';
 import { take } from 'rxjs/operators';
+
+import { environment } from '../environments/environment';
+import { Socket } from './action/socket';
 
 @Component({
   selector: 'root',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Socket } from "../socket";
-import { ActionService } from '../action.service';
+
+import { ActionService } from '../action/action.service';
 
 @Component({
   selector: 'statistics',

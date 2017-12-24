@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
-import { ActionService } from '../action.service';
-import * as colors from 'color-name';
 import { MatTabGroup } from '@angular/material';
+import * as colors from 'color-name';
+
+import { ActionService } from '../action/action.service';
 
 export interface Color {
   duration: number;
