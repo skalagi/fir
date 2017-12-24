@@ -4,7 +4,7 @@ import { ActionService } from '../action.service';
 import * as colors from 'color-name';
 
 export interface Color {
-  delay: number;
+  duration: number;
   rgb: number[];
 }
 
@@ -21,7 +21,7 @@ export class SequencerComponent implements OnInit {
   public colorName: string;
 
   private color(rgb) {
-    return { rgb, delay: null };
+    return { rgb, duration: null };
   }
 
   public setColor(i, rgbString) {
@@ -56,7 +56,7 @@ export class SequencerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.addColor();     this.actions.action('ChangeColor', ({ rgb }) => {       let colorName;        Object.keys(colors).filter(color => {         const col = colors[color];          if (col[0] == color[0] && col[1] == rgb[1] && col[2] == rgb[2]) {           colorName = color;
+    this.addColor();     this.actions.action('ChangeColor', ({ rgb }) => {       let colorName;        Object.keys(colors).filter(color => {         const col = colors[color];          if (col[0] == rgb[0] && col[1] == rgb[1] && col[2] == rgb[2]) {           colorName = color;
         }       });        this.colorName = colorName;       this.currentColor = `rgb(${ rgb[0] }, ${ rgb[1] }, ${ rgb[2] })`;     });
   }
 }
