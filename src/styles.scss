@@ -17,6 +17,10 @@ $christmas-app-theme: mat-light-theme($christmas-app-primary, $christmas-app-acc
   color: mat-color($christmas-app-primary);
 }
 
+.accent {
+  color: mat-color($christmas-app-accent);
+}
+
 body {
   margin: 0;
   min-height: 100vh;
