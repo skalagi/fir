@@ -14,6 +14,11 @@ mat-drawer-container {
   margin: 32px;
 }
 
+.color-name {
+  margin-left: .25em;
+  text-shadow: 0 0 0.1em rgba(0, 0, 0, .7);
+}
+
 mat-slide-toggle {
   margin-left: auto;
 }

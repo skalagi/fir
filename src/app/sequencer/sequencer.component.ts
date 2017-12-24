@@ -19,8 +19,6 @@ export class SequencerComponent implements OnInit {
   constructor(private actions: ActionService) { }
   @Input() active: boolean;
   public colors: Color[] = [];
-  public currentColor: string;
-  public colorName: string;
 
   public backToSequence() {
     this.tabGroup.selectedIndex = 0;
@@ -70,7 +68,6 @@ export class SequencerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.addColor();     this.actions.action('ChangeColor', ({ rgb }) => {       let colorName;        Object.keys(colors).filter(color => {         const col = colors[color];          if (col[0] == rgb[0] && col[1] == rgb[1] && col[2] == rgb[2]) {           colorName = color;
-        }       });        this.colorName = colorName;       this.currentColor = `rgb(${ rgb[0] }, ${ rgb[1] }, ${ rgb[2] })`;     });
+    this.addColor();
   }
 }
