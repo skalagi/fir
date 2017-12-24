@@ -8,10 +8,6 @@
         <mat-icon [color]="networkStatus == 'connection established' ? 'primary' : 'accent'" matListIcon>https</mat-icon>
         <p matLine [ngClass]="{ primary: networkStatus == 'connection established', accent: networkStatus != 'connection established' }">{{ networkStatus }}</p>
       </mat-list-item>
-      <mat-list-item matTooltipPosition="above" matTooltip="Sequences mode will disable state change mode">
-        <mat-icon matListIcon [color]="sequences ? 'accent' : ''">select_all</mat-icon>
-        <mat-slide-toggle matLine [(ngModel)]="sequences">Sequences</mat-slide-toggle>
-      </mat-list-item>
       <mat-list-item>
         <mat-icon matListIcon>live_tv</mat-icon>
         <mat-slide-toggle [(ngModel)]="live" matLine>Live-stream</mat-slide-toggle>
@@ -21,6 +17,12 @@
     <statistics></statistics>
   </mat-drawer>
   <mat-drawer-content>
+    <mat-toolbar>
+      <button mat-icon-button class="drawer-toggle" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-slide-toggle matLine [(ngModel)]="sequences">Sequences</mat-slide-toggle>
+    </mat-toolbar>
     <sequencer [active]="sequences"></sequencer>
 
     <mat-grid-list [ngStyle]="{ width: hostWidth ? '' : '35em' }" class="channels" [cols]="columns" [rowHeight]="sequences ? '2.4em' : '6em'">
@@ -28,9 +30,5 @@
         <channel [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
       </mat-grid-tile>
     </mat-grid-list>
-
-    <button mat-icon-button class="drawer-toggle" (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
   </mat-drawer-content>
 </mat-drawer-container>
