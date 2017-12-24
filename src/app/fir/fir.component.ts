@@ -13,7 +13,7 @@ import { Socket } from '../action/socket';
   styleUrls: ['./fir.component.scss'],
 })
 export class FirComponent {
-  public sequences = true;
+  public sequences = false;
   public live = true;
   public networkStatus = 'finding way to the house';
   public channels: any[] = [];
