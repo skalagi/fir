@@ -39,6 +39,7 @@ export class Socket {
   }
 
   public restart() {
+    this.snack.open(`server is about to restart connection in ${environment.restartDelay / 1000}s`, null, { panelClass: 'accent' });
     setTimeout(() => this.init(), environment.restartDelay);
   }
 
