@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
 import { ActionService } from '../action.service';
 import * as colors from 'color-name';
+import { MatTabGroup } from '@angular/material';
 
 export interface Color {
   duration: number;
@@ -19,6 +20,17 @@ export class SequencerComponent implements OnInit {
   public colors: Color[] = [];
   public currentColor: string;
   public colorName: string;
+
+  public backToSequence() {
+    this.tabGroup.selectedIndex = 0;
+  }
+
+  public clear() {
+    this.colors = [];
+    this.addColor();
+  }
+
+  @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
 
   private color(rgb) {
     return { rgb, duration: null };
@@ -40,10 +52,7 @@ export class SequencerComponent implements OnInit {
   }
 
   public removeColor(i) {
-    console.log(i);
-    if (this.colors.length > 1) {
-      this.colors.pop();
-    }
+    this.colors.splice(i, 1);
   }
 
   public send() {

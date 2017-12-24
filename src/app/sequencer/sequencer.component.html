@@ -3,20 +3,36 @@
     <span [ngStyle]="{ color: colorName ? '' : currentColor }">Current lights color</span>
     <span *ngIf="colorName?.length" class="color-name" [ngStyle]="{ color: colorName }">is {{ colorName }}</span>
   </mat-card-title>
+
+  <mat-tab-group *ngIf="active" dynamicHeight="true">
+    <mat-tab label="sequence">
+      <mat-card-subtitle class="sequence-description">Sequences length is {{ colors.length }}</mat-card-subtitle>
+      <button *ngIf="colors.length" mat-button (click)="send()">Now you can <span class="accent">send</span> sequence,</button>
+      <button mat-button (click)="addColor()"><span class="accent">add</span> another color</button>
+      <button mat-button (click)="clear()">or <span [class]="colors.length > 1 ? 'warn' : 'accent'">{{ colors.length > 1 ? 'clear it.' : 'generate color'}}</span></button>
+    </mat-tab>
+
+    <mat-tab class="color" *ngFor="let color of colors; let i = index">
+      <ng-template mat-tab-label>
+        <div class="color-label" [style.background]="rgb(color.rgb)">
+          <span>{{ i + 1 }}</span>
+        </div>
+      </ng-template>
+
+      <mat-toolbar>
+        <button mat-button (click)="backToSequence()">back to sequence menu</button>
+        <button mat-button color="warn" (click)="removeColor(i)">remove</button>
+      </mat-toolbar>
+
+      <input [colorPicker]="rgb(color.rgb)"
+             cpDialogDisplay="inline" [cpToggle]="true"
+             (colorPickerChange)="setColor(i, $event)"
+             cpAlphaChannel="disabled" cpOutputFormat="rgba" />
+    </mat-tab>
+  </mat-tab-group>
+
   <mat-card-subtitle *ngIf="active">
-    <input *ngFor="let color of colors; let i = index"
-           [style.background]="rgb(color.rgb)"
-           [colorPicker]="rgb(color.rgb)"
-           (colorPickerChange)="setColor(i, $event)"
-           cpAlphaChannel="disabled"
-           cpOutputFormat="rgba"
-           class="mat-elevation-z1" />
     <p>Create lights sequence or pick just one color you like most.</p>
     <p *ngIf="colorName?.length">Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span></p>
   </mat-card-subtitle>
-  <mat-card-actions *ngIf="active">
-    <button mat-button (click)="addColor()">add color</button>
-    <button mat-button (click)="removeColor()">remove color</button>
-    <button mat-button (click)="send()">send</button>
-  </mat-card-actions>
 </mat-card>

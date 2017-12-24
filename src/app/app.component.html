@@ -1,4 +1,4 @@
-<screen></screen>
+<screen [style.height]="live ? auto : 0"></screen>
 
 <mat-progress-bar *ngIf="networkStatus != 'connection established'" mode="indeterminate"></mat-progress-bar>
 <mat-drawer-container>
@@ -11,6 +11,10 @@
       <mat-list-item matTooltipPosition="above" matTooltip="Sequences mode will disable state change mode">
         <mat-icon matListIcon [color]="sequences ? 'accent' : ''">select_all</mat-icon>
         <mat-slide-toggle matLine [(ngModel)]="sequences">Sequences</mat-slide-toggle>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>live_tv</mat-icon>
+        <mat-slide-toggle [(ngModel)]="live" matLine>Live-stream</mat-slide-toggle>
       </mat-list-item>
     </mat-list>
 
@@ -25,7 +29,7 @@
       </mat-grid-tile>
     </mat-grid-list>
 
-    <button mat-icon-button (click)="drawer.toggle()">
+    <button mat-icon-button class="drawer-toggle" (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
   </mat-drawer-content>
