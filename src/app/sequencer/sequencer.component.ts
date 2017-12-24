@@ -50,6 +50,10 @@ export class SequencerComponent implements OnInit {
     const colorName = Object.keys(colors)[color];
     
     this.colors.push(this.color(colors[colorName]));
+
+    if (this.tabGroup) {
+      this.tabGroup.selectedIndex = this.colors.length;
+    }
   }
 
   public removeColor(i) {
