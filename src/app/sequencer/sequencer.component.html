@@ -7,9 +7,9 @@
   <mat-tab-group *ngIf="active" dynamicHeight="true">
     <mat-tab label="sequence">
       <mat-card-subtitle class="sequence-description">Sequences length is {{ colors.length }}</mat-card-subtitle>
-      <button mat-button (click)="send()">Now you can <span class="accent">send</span> sequence,</button>
+      <button *ngIf="colors.length" mat-button (click)="send()">Now you can <span class="accent">send</span> sequence,</button>
       <button mat-button (click)="addColor()"><span class="accent">add</span> another color</button>
-      <button mat-button (click)="clear()">or <span class="warn">clear it.</span></button>
+      <button mat-button (click)="clear()">or <span [class]="colors.length > 1 ? 'warn' : 'accent'">{{ colors.length > 1 ? 'clear it.' : 'generate color'}}</span></button>
     </mat-tab>
 
     <mat-tab class="color" *ngFor="let color of colors; let i = index">
@@ -21,6 +21,7 @@
 
       <mat-toolbar>
         <button mat-button (click)="backToSequence()">back to sequence menu</button>
+        <button mat-button color="warn" (click)="removeColor(i)">remove</button>
       </mat-toolbar>
 
       <input [colorPicker]="rgb(color.rgb)"

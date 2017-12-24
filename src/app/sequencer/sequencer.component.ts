@@ -52,10 +52,7 @@ export class SequencerComponent implements OnInit {
   }
 
   public removeColor(i) {
-    console.log(i);
-    if (this.colors.length > 1) {
-      this.colors.pop();
-    }
+    this.colors.splice(i, 1);
   }
 
   public send() {
