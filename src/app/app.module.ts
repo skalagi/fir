@@ -13,9 +13,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { ChannelComponent } from './channel/channel.component';
 import { ScreenComponent } from './screen/screen.component';
-import { Socket } from "./socket";
 import { StatisticsComponent } from './statistics/statistics.component';
-import { ActionService } from './action.service';
 import { SequencerComponent } from './sequencer/sequencer.component';
 
 export const materialModules = [
@@ -54,7 +52,6 @@ export const materialModules = [
     ColorPickerModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : []
   ],
-  providers: [Socket, ActionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
