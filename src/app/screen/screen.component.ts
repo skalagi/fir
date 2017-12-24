@@ -17,7 +17,6 @@ export class ScreenComponent implements OnInit {
   public youtubeUrl() {
     return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.youtubeId}?autoplay=1`);
   }
-
   ngOnInit() {
     this.http.get(environment.uri + '/getStream').subscribe((stream: any) => {
       if (stream.type == 'yt') {
