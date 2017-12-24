@@ -1,11 +1,10 @@
-  import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { MatButtonModule, MatSnackBarModule, MatIconModule } from '@angular/material';
 
 import { ChannelComponent } from './channel.component';
-import { ActionModule } from '../action/action.module';
+import { ChannelModule } from './channel.module';
 
 describe('ChannelComponent', () => {
   let component: ChannelComponent;
@@ -14,6 +13,7 @@ describe('ChannelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ChannelModule],
     })
     .compileComponents();
   }));
