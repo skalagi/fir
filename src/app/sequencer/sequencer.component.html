@@ -6,10 +6,14 @@
 
   <mat-tab-group *ngIf="active" dynamicHeight="true">
     <mat-tab label="sequence">
-      <mat-card-subtitle class="sequence-description">Sequences length is {{ colors.length }}</mat-card-subtitle>
-      <button *ngIf="colors.length" mat-button (click)="send()">Now you can <span class="accent">send</span> sequence,</button>
-      <button mat-button (click)="addColor()"><span class="accent">add</span> another color</button>
-      <button mat-button (click)="clear()">or <span [class]="colors.length > 1 ? 'warn' : 'accent'">{{ colors.length > 1 ? 'clear it.' : 'generate color'}}</span></button>
+      <mat-card-subtitle *ngIf="active">
+        <p>Create lights sequence or pick just one color you like most.</p>
+        <p *ngIf="colorName?.length">Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span></p>
+      </mat-card-subtitle>
+      <mat-card-subtitle *ngIf="colors.length" class="sequence-description">Sequences length is {{ colors.length }}</mat-card-subtitle>
+      <button *ngIf="colors.length" mat-button (click)="send()">Now you can <span class="accent">send</span> {{ colors.length > 1 ? 'sequence' : 'color' }},</button>
+      <button mat-button (click)="addColor()"><span class="accent">add</span> color</button>
+      <button *ngIf="colors.length" mat-button (click)="clear()">or <span [class]="colors.length > 1 ? 'warn' : 'accent'">{{ colors.length > 1 ? 'clear it.' : 'random color'}}</span></button>
     </mat-tab>
 
     <mat-tab class="color" *ngFor="let color of colors; let i = index">
@@ -36,9 +40,4 @@
       </div>      
     </mat-tab>
   </mat-tab-group>
-
-  <mat-card-subtitle *ngIf="active">
-    <p>Create lights sequence or pick just one color you like most.</p>
-    <p *ngIf="colorName?.length">Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span></p>
-  </mat-card-subtitle>
 </mat-card>
