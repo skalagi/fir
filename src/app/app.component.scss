@@ -24,9 +24,10 @@ mat-drawer-content {
 }
 
 mat-drawer-container {
+  background: none;
   height: 100%;
 }
 
-mat-drawer, mat-drawer-container {
-  background: none;
+mat-drawer {
+  background: rgba(255, 255, 255, .5);
 }
