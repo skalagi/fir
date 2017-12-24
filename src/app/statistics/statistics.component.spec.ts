@@ -1,9 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from "@angular/common/http";
-import { MatIconModule, MatSnackBarModule, MatListModule } from '@angular/material';
 
 import { StatisticsComponent } from './statistics.component';
-import { ActionModule } from '../action/action.module';
+import { StatisticsModule } from './statistics.module';
 
 describe('StatisticsComponent', () => {
   let component: StatisticsComponent;
@@ -11,14 +10,7 @@ describe('StatisticsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [StatisticsComponent],
-      imports: [
-        MatListModule,
-        HttpClientModule,
-        MatSnackBarModule,
-        MatIconModule,
-        ActionModule,
-      ]
+      imports: [StatisticsModule],
     })
     .compileComponents();
   }));

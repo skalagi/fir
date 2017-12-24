@@ -1,10 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 import { ColorPickerModule } from 'ngx-color-picker';
 
+
 import { SequencerComponent } from './sequencer.component';
-import { materialModules } from '../app.module';
-import { HttpClientModule } from '@angular/common/http';
-import { ActionModule } from '../action/action.module';
+import { SequencerModule } from './sequencer.module';
 
 describe('SequencerComponent', () => {
   let component: SequencerComponent;
@@ -12,8 +12,7 @@ describe('SequencerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SequencerComponent],
-      imports: [ColorPickerModule, ...materialModules, HttpClientModule, ActionModule]
+      imports: [SequencerModule],
     })
     .compileComponents();
   }));

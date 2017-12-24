@@ -11,8 +11,6 @@ import { ActionModule } from '../action/action.module';
     CommonModule,
     ActionModule,
     MatButtonModule,
-    MatSnackBarModule,
-    HttpClientModule,
   ],
   declarations: [ChannelComponent],
   exports: [ChannelComponent],
