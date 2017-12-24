@@ -3,17 +3,22 @@
     <span [ngStyle]="{ color: colorName ? '' : currentColor }">Current lights color</span>
     <span *ngIf="colorName?.length" class="color-name" [ngStyle]="{ color: colorName }">is {{ colorName }}</span>
   </mat-card-title>
+
+  <div class="sequence-line mat-elevation-z3" mat-card-image *ngIf="active">
+    <span *ngFor="let color of colors; let i = index">
+      <input [style.background]="rgb(color.rgb)"
+             [colorPicker]="rgb(color.rgb)"
+             (colorPickerChange)="setColor(i, $event)"
+             cpAlphaChannel="disabled"
+             cpOutputFormat="rgba" />
+    </span>
+  </div>
+
   <mat-card-subtitle *ngIf="active">
-    <input *ngFor="let color of colors; let i = index"
-           [style.background]="rgb(color.rgb)"
-           [colorPicker]="rgb(color.rgb)"
-           (colorPickerChange)="setColor(i, $event)"
-           cpAlphaChannel="disabled"
-           cpOutputFormat="rgba"
-           class="mat-elevation-z1" />
     <p>Create lights sequence or pick just one color you like most.</p>
     <p *ngIf="colorName?.length">Current lights color is <span class="color-name" [ngStyle]="{ color: colorName }">{{ colorName }}</span></p>
   </mat-card-subtitle>
+
   <mat-card-actions *ngIf="active">
     <button mat-button (click)="addColor()">add color</button>
     <button mat-button (click)="removeColor()">remove color</button>
