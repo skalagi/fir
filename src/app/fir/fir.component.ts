@@ -31,7 +31,6 @@ export class FirComponent {
   ngAfterViewInit() {
     this.socket.message$.pipe(take(1)).subscribe(() => {
       this.networkStatus = 'connection established';
-      this.drawer.open();
     });
   }
 
