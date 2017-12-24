@@ -4,11 +4,12 @@
     <span *ngIf="colorName?.length" class="color-name" [ngStyle]="{ color: colorName }">is {{ colorName }}</span>
   </mat-card-title>
 
-  <mat-tab-group dynamicHeight="true">
+  <mat-tab-group *ngIf="active" dynamicHeight="true">
     <mat-tab label="sequence">
       <mat-card-subtitle>Sequences length is {{ colors.length }}</mat-card-subtitle>
-      <button mat-button (click)="send()">Now you can <span class="accent">send</span> sequence</button>
-      <button mat-button (click)="addColor()">or add another color</button>
+      <button mat-button (click)="send()">Now you can <span class="accent">send</span> sequence,</button>
+      <button mat-button (click)="addColor()">add another color</button>
+      <button mat-button (click)="clear()">or clear</button>
     </mat-tab>
 
     <mat-tab class="color" *ngFor="let color of colors; let i = index">

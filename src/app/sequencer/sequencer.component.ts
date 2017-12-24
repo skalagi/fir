@@ -25,6 +25,11 @@ export class SequencerComponent implements OnInit {
     this.tabGroup.selectedIndex = 0;
   }
 
+  public clear() {
+    this.colors = [];
+    this.addColor();
+  }
+
   @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
 
   private color(rgb) {
