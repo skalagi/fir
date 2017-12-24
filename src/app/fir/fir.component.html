@@ -21,7 +21,7 @@
       <button mat-icon-button class="drawer-toggle" (click)="drawer.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <mat-slide-toggle matLine [(ngModel)]="sequences">Sequences</mat-slide-toggle>
+      <mat-slide-toggle [(ngModel)]="sequences" matTooltipPosition="above" matTooltip="Sequences mode will disable state change mode">Sequences</mat-slide-toggle>
     </mat-toolbar>
     <sequencer [active]="sequences"></sequencer>
 
