@@ -34,7 +34,7 @@ export class SequencerComponent implements OnInit {
   @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
 
   private color(rgb) {
-    return { rgb, duration: null };
+    return { rgb, duration: 420 };
   }
 
   public setColor(i, rgbString) {
