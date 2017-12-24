@@ -14,6 +14,19 @@ mat-drawer-container {
   margin: 32px;
 }
 
+.drawer-toggle {
+  margin-top: auto;
+}
+
+mat-drawer-content {
+  display: flex;
+  flex-flow: column;
+}
+
+mat-drawer-container {
+  height: 100%;
+}
+
 mat-drawer, mat-drawer-container {
   background: none;
 }
