@@ -22,7 +22,7 @@
         <mat-icon>menu</mat-icon>
       </button>
 
-      <span [ngStyle]="{ color: colorName ? '' : currentColor }">Current lights color</span>
+      <span [ngStyle]="{ color: colorName ? '' : currentColor }">Current roof color</span>
       <span *ngIf="colorName?.length" class="color-name" [ngStyle]="{ color: colorName }">is {{ colorName }}</span>
 
       <mat-slide-toggle [(ngModel)]="sequences" matTooltipPosition="above" matTooltip="Sequences mode will disable state change mode">Sequences</mat-slide-toggle>
