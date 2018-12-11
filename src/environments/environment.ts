@@ -1,5 +1,5 @@
 export const environment = {
-  uri: 'https://api.lights.host',
+  uri: 'http://robertbrzoza.pl:8000',
   restartDelay: 3000,
   production: false,
 };

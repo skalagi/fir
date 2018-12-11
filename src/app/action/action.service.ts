@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { Socket } from './socket';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ActionService {
   private actions: Set<any[]> = new Set();
 
@@ -15,11 +17,23 @@ export class ActionService {
     });
   }
 
+  private resolveWhatAction({ channel, queue }) {
+    if (channel !== undefined) {
+      return 'channel';
+    } else if (queue !== undefined) {
+      return 'queue';
+    }
+
+    return null;
+  }
+
   private broadcast(message) {
     this.actions.forEach(action => {
-      if (action[0] === message.action) {
+      const resolvedAction = this.resolveWhatAction(message);
+
+      if (action[0] === resolvedAction) {
         if (message.controllerResponse ? message.controllerResponse === 'OK' : true) {
-          action[1](message.value);
+          action[1](message);
         }
       }
     })
