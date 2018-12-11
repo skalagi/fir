@@ -30,8 +30,11 @@
     <sequencer [active]="sequences"></sequencer>
 
     <mat-grid-list [ngStyle]="{ width: hostWidth ? '' : '35em' }" class="channels" [cols]="columns" [rowHeight]="sequences ? '2.4em' : '6em'">
-      <mat-grid-tile *ngFor="let channel of channels">
-        <channel [active]="!sequences" [identity]="channel.identity" [label]="channel.label"></channel>
+      <mat-grid-tile *ngFor="let channel of (channels$ | async); trackBy: channel?.id">
+        <channel [active]="!sequences" 
+          [state]="channel.state"
+          [identity]="channel.id" 
+          [label]="channel.name"></channel>
       </mat-grid-tile>
     </mat-grid-list>
   </mat-drawer-content>
