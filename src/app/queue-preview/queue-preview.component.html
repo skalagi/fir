@@ -1,5 +1,12 @@
 <ul>
-  <li *ngFor="let item of (queue$ | async)?.value">
-    {{ item.channel }} - {{ item.state }}
+  <li class="mat-body-1" *ngFor="let item of (queue$ | async)?.value">
+    <div *ngIf="item?.channel; else color">
+      {{ item.channel }} - {{ item.state }}
+    </div>
+
+    <ng-template #color>
+      {{ item.id }}
+      {{ item.r + item.g + item.b }}
+    </ng-template>
   </li>
 </ul>
