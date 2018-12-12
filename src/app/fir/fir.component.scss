@@ -35,8 +35,8 @@ mat-drawer {
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 footer {

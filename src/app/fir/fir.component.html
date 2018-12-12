@@ -24,14 +24,12 @@
 
       <span [ngStyle]="{ color: colorName ? '' : currentColor }">Current roof color</span>
       <span *ngIf="colorName?.length" class="color-name" [ngStyle]="{ color: colorName }">is {{ colorName }}</span>
-
-      <mat-slide-toggle [(ngModel)]="sequences" matTooltipPosition="above" matTooltip="Sequences mode will disable state change mode">Sequences</mat-slide-toggle>
     </mat-toolbar>
     
-    <sequencer [active]="sequences"></sequencer>
+    <queue-preview></queue-preview>
 
     <main>
-      <queue-preview></queue-preview>
+      <sequencer [colorName]="colorName"></sequencer>
       <channels [channels]="channels$ | async"></channels>
     </main>
   </mat-drawer-content>

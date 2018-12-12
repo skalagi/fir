@@ -6,13 +6,14 @@ import { MatCardModule, MatInputModule, MatTabsModule, MatToolbarModule, MatButt
 
 import { SequencerComponent } from './sequencer.component';
 import { ActionModule } from '../action/action.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
     CommonModule,
-    ColorPickerModule,
     ActionModule,
     FormsModule,
+    FlexLayoutModule,
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,

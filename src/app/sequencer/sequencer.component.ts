@@ -1,73 +1,33 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormBuilder, FormArray, FormGroup } from '@angular/forms';
 import { MatTabGroup } from '@angular/material';
+import * as converter from 'hex-rgb';
 import * as colors from 'color-name';
+import * as materialColors from 'material-colors';
 
 import { ActionService } from '../action/action.service';
-
-export interface Color {
-  duration: number;
-  rgb: number[];
-}
+import { guid } from '@datorama/akita';
 
 @Component({
   selector: 'sequencer',
   templateUrl: './sequencer.component.html',
   styleUrls: ['./sequencer.component.scss']
 })
-export class SequencerComponent implements OnInit {
+export class SequencerComponent {
   constructor(private actions: ActionService) { }
-  @Input() active: boolean;
-  public colors: Color[] = [];
+  color = { r: 0, g: 0, b: 0 };
+  colors = materialColors;
+  @Input() colorName;
 
-  public backToSequence() {
-    this.tabGroup.selectedIndex = 0;
-  }
+  public send(color) {
+    const { red: r, green: g, blue: b } = converter(color.value['600']);
 
-  public clear() {
-    this.colors = [];
-    this.addColor();
-  }
-
-  @ViewChild(MatTabGroup) tabGroup: MatTabGroup;
-
-  private color(rgb) {
-    return { rgb, duration: 1 };
-  }
-
-  public setColor(i, rgbString) {
-    this.colors[i].rgb = rgbString.slice(4, -1).split(',');
-  }
-
-  rgb(rgb) {
-    return `rgb(${ rgb[0] }, ${ rgb[1] }, ${ rgb[2] })`
-  }
-
-  public addColor() {
-    const color = Math.round(Math.random() * 148);
-    const colorName = Object.keys(colors)[color];
-    
-    this.colors.push(this.color(colors[colorName]));
-
-    if (this.tabGroup) {
-      this.tabGroup.selectedIndex = this.colors.length;
-    }
-  }
-
-  public removeColor(i) {
-    this.colors.splice(i, 1);
-  }
-
-  public send() {
     this.actions.change({
-      controller: 'ChangeColor',
+      controller: 'ChangeState',
       value: {
-        changes: this.colors,
+        id: guid(),
+        r, g, b,
       },
     });
-  }
-
-  ngOnInit() {
-    this.addColor();
   }
 }
