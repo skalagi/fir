@@ -34,6 +34,11 @@ mat-drawer {
   background: rgba(255, 255, 255, .5);
 }
 
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 footer {
   height: 64px;
 }

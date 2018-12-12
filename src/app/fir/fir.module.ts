@@ -21,6 +21,7 @@ import { SequencerModule } from '../sequencer/sequencer.module';
 import { ChannelModule } from '../channel/channel.module';
 import { ScreenModule } from '../screen/screen.module';
 import { FirComponent } from './fir.component';
+import { QueueModule } from '../queue/queue.module';
 
 @NgModule({
   imports: [
@@ -29,6 +30,7 @@ import { FirComponent } from './fir.component';
     StatisticsModule,
     SequencerModule,
     ChannelModule,
+    QueueModule,
     ScreenModule,
     MatProgressBarModule,
     MatButtonModule,

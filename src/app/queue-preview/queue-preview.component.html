@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let item of (queue$ | async)?.value">
+    {{ item.channel }} - {{ item.state }}
+  </li>
+</ul>
