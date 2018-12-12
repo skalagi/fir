@@ -45,7 +45,7 @@ export class FirComponent {
   ngOnInit() {
     this.channels$ = this.channelQ.all$;
 
-    this.actions.action('ChangeColor', ({ rgb }) => {
+    this.actions.action('ChangeColor').subscribe(({ rgb }) => {
       let colorName;
 
       Object.keys(colors).filter(color => {

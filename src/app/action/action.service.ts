@@ -2,17 +2,19 @@ import { Injectable } from '@angular/core';
 
 import { environment } from '../../environments/environment';
 import { Socket } from './socket';
+import { Subject } from 'rxjs';
+import { filter, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ActionService {
-  private actions: Set<any[]> = new Set();
+  private action$ = new Subject();
 
   constructor(private socket: Socket) {
     socket.message$.subscribe(action => this.broadcast(action));
 
-    this.action('ServerRestart', action => {
+    this.action('ServerRestart').subscribe(() => {
       this.socket.restart();
     });
   }
@@ -28,22 +30,19 @@ export class ActionService {
   }
 
   private broadcast(message) {
-    this.actions.forEach(action => {
-      const resolvedAction = this.resolveWhatAction(message);
-
-      if (action[0] === resolvedAction) {
-        if (message.controllerResponse ? message.controllerResponse === 'OK' : true) {
-          action[1](message);
-        }
-      }
-    })
+    this.action$.next(message);
   }
 
   public change(change) {
     this.socket.send(change);
   }
 
-  public action(name: string, cb: Function) {
-    this.actions.add([name, cb]);
+  public action(...names: string[]) {
+    return this.action$.asObservable()
+      .pipe(filter((message: any) =>
+        names.some(name => 
+          this.resolveWhatAction(message) === name
+        )),
+      );
   }
 }

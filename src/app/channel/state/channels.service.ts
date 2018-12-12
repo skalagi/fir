@@ -25,14 +25,15 @@ export class ChannelsService {
   }
 
   private updates() {    
-    this.action.action('channel', ({ channel, state, status }) => {
-      if (typeof channel !== 'number') {
-        return;
-      }
+    this.action.action('channel')
+      .subscribe(({ channel, state, status }) => {
+        if (typeof channel !== 'number') {
+          return;
+        }
 
-      if (status === 'current' || status === 'executed') {
-        this.store.update(channel, { state });
-      }
+        if (status === 'current' || status === 'executed') {
+          this.store.update(channel, { state });
+        }
     });
   }
 

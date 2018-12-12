@@ -17,11 +17,11 @@ export class StatisticsComponent implements OnInit {
   constructor(private actions: ActionService) { }
 
   ngOnInit() {
-    this.actions.action('UpdateStats', (stats) => {
+    this.actions.action('UpdateStats').subscribe((stats) => {
       Object.assign(this, stats);
     });
 
-    this.actions.action('ChangeState', () => {
+    this.actions.action('ChangeState').subscribe(() => {
       this.totalChanges++;
       this.todayChanges++;
     });
