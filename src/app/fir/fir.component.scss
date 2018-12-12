@@ -11,10 +11,6 @@ mat-drawer-container {
   min-height: 272px;
 }
 
-.channels {
-  margin: 32px;
-}
-
 .color-name {
   margin-left: .25em;
   text-shadow: 0 0 0.1em rgba(0, 0, 0, .7);
@@ -36,4 +32,31 @@ mat-drawer-container {
 
 mat-drawer {
   background: rgba(255, 255, 255, .5);
+}
+
+footer {
+  height: 64px;
+}
+
+.diamond {
+    border-style: solid;
+    border-color: transparent transparent #03a9f4 transparent;
+    border-width: 0 25px 25px 25px;
+    height: 0;
+    width: 50px;
+    box-sizing: content-box;
+    position: relative;
+    margin: 20px 0 50px 0;
+}
+
+.diamond:after {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: -25px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #03a9f4 transparent transparent transparent;
+    border-width: 70px 50px 0 50px;
 }

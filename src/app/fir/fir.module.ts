@@ -9,7 +9,8 @@ import {
   MatIconModule,
   MatListModule,
   MatSlideToggleModule,
-  MatGridListModule,
+  MatGridListModule,
+
   MatButtonModule,
   MatToolbarModule,
   MatTooltipModule
@@ -36,7 +37,6 @@ import { FirComponent } from './fir.component';
     MatListModule,
     MatSlideToggleModule,
     MatToolbarModule,
-    MatGridListModule,
     MatTooltipModule,
     FlexLayoutModule,
     FormsModule,

@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
 import { FirComponent } from './fir/fir.component';
 import { FirModule } from './fir/fir.module';
 import { akitaDevtools } from '@datorama/akita';
+import { ChannelsComponent } from './channels/channels.component';
 
 if (!environment.production) {
   akitaDevtools();
@@ -18,6 +19,6 @@ if (!environment.production) {
     FirModule,
     environment.production ? ServiceWorkerModule.register('/ngsw-worker.js') : [],
   ],
-  bootstrap: [FirComponent]
+  bootstrap: [FirComponent],
 })
 export class AppModule { }

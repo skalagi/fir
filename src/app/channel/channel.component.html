@@ -1,6 +1,5 @@
 <button [ngClass]="{ 'just-show': !active }" 
   mat-raised-button (click)="toggleColor()" 
   [color]="state ? 'primary' : null">
-
-  {{ label }}
+  <h3 class="mat-title label">{{ label }}</h3>
 </button>

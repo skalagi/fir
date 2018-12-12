@@ -14,14 +14,14 @@ import { ChannelsQuery } from '../channel/state';
   styleUrls: ['./fir.component.scss'],
 })
 export class FirComponent {
-  public sequences = false;
-  public live = true;
   public networkStatus = 'finding way to the house';
-  public channels$;
   public drawerMode = 'side';
   public currentColor: string;
   public colorName: string;
+  public sequences = false;
   public columns = 4;
+  public live = true;
+  public channels$;
   public mq;
 
   @HostBinding('style.margin') hostMargin;
