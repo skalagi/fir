@@ -25,13 +25,13 @@
       <span [ngStyle]="{ color: colorName ? '' : currentColor }">Current roof color</span>
       <span *ngIf="colorName?.length" class="color-name" [ngStyle]="{ color: colorName }">is {{ colorName }}</span>
     </mat-toolbar>
-    
-    <queue-preview></queue-preview>
 
     <main>
       <sequencer [colorName]="colorName"></sequencer>
       <channels [channels]="channels$ | async"></channels>
     </main>
+    
+    <queue-preview></queue-preview>
   </mat-drawer-content>
 </mat-drawer-container>
 
