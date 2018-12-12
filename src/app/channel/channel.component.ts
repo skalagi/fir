@@ -6,6 +6,7 @@ import { ChannelsService } from './state';
   selector: 'channel',
   templateUrl: './channel.component.html',
   styleUrls: ['./channel.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChannelComponent {
   constructor(
