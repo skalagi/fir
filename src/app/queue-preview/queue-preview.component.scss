@@ -1,5 +1,8 @@
 :host {
     color: #333;
+    display: block;
+    position: relative;
+    height: 32px;
 }
 
 ul {
@@ -10,12 +13,12 @@ ul {
 }
 
 li {
-    margin: 12px;
+    margin: 4px;
 }
 
 .que-element {
-    height: 48px;
-    width: 48px;
+    height: 24px;
+    width: 32px;
 }
 
 .channel {
