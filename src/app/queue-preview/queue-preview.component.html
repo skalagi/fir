@@ -1,12 +1,15 @@
 <ul>
   <li class="mat-body-1" *ngFor="let item of (queue$ | async)?.value">
-    <div *ngIf="item?.channel; else color">
-      {{ item.channel }} - {{ item.state }}
+    <div class="que-element color" *ngIf="item?.r; else channel"
+      [ngStyle]="{ backgroundColor: 'rgb(' + item.r + ',' + item.g + ',' + item.b + ')' }">
     </div>
 
-    <ng-template #color>
-      {{ item.id }}
-      {{ item.r + item.g + item.b }}
+    <ng-template #channel>
+      <div class="que-element channel"
+        [ngClass]="item.state ? 'primary-background' : 'normal'">
+
+        {{ item.channel }}
+      </div>
     </ng-template>
   </li>
 </ul>
