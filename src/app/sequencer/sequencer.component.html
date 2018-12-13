@@ -1,8 +1,8 @@
-<div class="colors" gdColumns="repeat(6, 1fr)" gdGap="32px"
+<div class="colors" gdColumns="repeat(6, 1fr)" gdGap="12px"
   gdLayoutAlign="center center">
   <ng-template let-color ngFor [ngForOf]="colors | keyvalue">
-    <button mat-button *ngIf="color.value['600'] as drop" 
-      color="primary" class="color-button mat-elevation-z2"
+    <button mat-button *ngIf="color.value['500'] as drop" 
+      color="primary" class="color-button"
       [ngStyle]="{ color: drop }" (click)="send(color)">
       <div class="color-drop" [ngStyle]="{ backgroundColor: drop }"></div>
     </button>

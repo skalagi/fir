@@ -20,7 +20,7 @@ export class SequencerComponent {
   @Input() colorName;
 
   public send(color) {
-    const { red: r, green: g, blue: b } = converter(color.value['600']);
+    const { red: r, green: g, blue: b } = converter(color.value['500']);
 
     this.actions.change({
       controller: 'ChangeState',

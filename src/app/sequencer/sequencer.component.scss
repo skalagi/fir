@@ -1,10 +1,10 @@
 .color-drop {
-  height: 64px;
-  width: 64px;
+  $drop-size: 48px;
+  height: $drop-size;
+  width: $drop-size;
 }
 
 .color-button {
-  transform: rotate(2deg);
   border-radius: 4px / 3px;
   overflow: hidden;
   padding: 0;
