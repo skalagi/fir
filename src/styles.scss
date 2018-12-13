@@ -17,6 +17,10 @@ $christmas-app-theme: mat-dark-theme($christmas-app-primary, $christmas-app-acce
   color: mat-color($christmas-app-primary);
 }
 
+.primary-background {
+  background-color: mat-color($christmas-app-primary);
+}
+
 .accent {
   color: mat-color($christmas-app-accent);
 }
