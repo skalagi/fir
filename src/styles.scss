@@ -1,13 +1,12 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$christmas-app-primary: mat-palette($mat-green);
-$christmas-app-accent: mat-palette($mat-cyan, A200, A100, A400);
+$christmas-app-primary: mat-palette($mat-red, 900);
+$christmas-app-accent: mat-palette($mat-light-green, 900);
 
 $christmas-app-theme: mat-dark-theme($christmas-app-primary, $christmas-app-accent);
 
 @include angular-material-theme($christmas-app-theme);
-
 
 .warn {
   color: mat-color(mat-palette($mat-red));
@@ -19,6 +18,10 @@ $christmas-app-theme: mat-dark-theme($christmas-app-primary, $christmas-app-acce
 
 .primary-background {
   background-color: mat-color($christmas-app-primary);
+}
+
+.accent-background {
+  background-color: mat-color($christmas-app-accent);
 }
 
 .accent {

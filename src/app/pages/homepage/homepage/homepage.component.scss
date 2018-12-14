@@ -1,0 +1,32 @@
+:host {
+    grid-template-rows: 1.5fr repeat(4, 2fr);
+    grid-template-columns: repeat(8, 1fr);
+    display: grid;
+    width: 100%;
+}
+
+main {
+    position: relative;
+}
+
+h1 {
+    box-sizing: border-box;
+    padding: 48px 32px 0;
+}
+
+section {
+    border-top: 1px solid;
+    min-height: 50vh;
+}
+
+main, section {
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+
+screen {
+    position: absolute;
+    bottom: -288px;
+    right: 10vw;
+    width: 60vw;
+}
