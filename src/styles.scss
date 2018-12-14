@@ -25,10 +25,8 @@ $christmas-app-theme: mat-dark-theme($christmas-app-primary, $christmas-app-acce
   color: mat-color($christmas-app-accent);
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
+body, html {
+  height: 100%;
   width: 100%;
-  display: flex;
-  background-size: cover;
+  margin: 0;
 }
