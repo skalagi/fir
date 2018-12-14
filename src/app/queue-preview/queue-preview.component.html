@@ -1,14 +1,15 @@
 <ul>
   <li class="mat-body-1" *ngFor="let item of (queue$ | async)?.value">
-    <div class="que-element color" *ngIf="item?.r; else channel"
-      [ngStyle]="{ backgroundColor: 'rgb(' + item.r + ',' + item.g + ',' + item.b + ')' }">
+    <div class="que-element channel" *ngIf="item?.channel !== null; else led">
+      <mat-icon>
+        {{ item.state ? 'radio_button_checked' : 'radio_button_unchecked' }}
+      </mat-icon>
     </div>
 
-    <ng-template #channel>
-      <div class="que-element channel"
-        [ngClass]="item.state ? 'primary-background' : 'normal'">
-
-        {{ item.channel }}
+    <ng-template #led>
+      <div class="que-element color"
+        [ngStyle]="{ color: 'rgb(' + item.r + ',' + item.g + ',' + item.b + ')' }">
+        <mat-icon>palette</mat-icon>
       </div>
     </ng-template>
   </li>

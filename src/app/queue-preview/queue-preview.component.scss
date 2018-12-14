@@ -18,11 +18,11 @@ li {
 
 .que-element {
     height: 24px;
-    width: 32px;
+    width: 24px;
+    border-radius: 50%;
 }
 
 .channel {
     &.normal {
-        background: #333;
     }
 }
