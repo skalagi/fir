@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
 @Component({
   selector: 'switches',
   templateUrl: './switches.component.html',
-  styleUrls: ['./switches.component.scss']
+  styleUrls: ['./switches.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SwitchesComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class SwitchesComponent {
+  @Input() channels;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChannelsQuery } from '../../../channel/state';
 
 @Component({
   selector: 'homepage',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  channels$;
 
-  constructor() { }
+  constructor(private channelQ: ChannelsQuery) { }
 
   ngOnInit() {
+    this.channels$ = this.channelQ.all$;
   }
 
 }

@@ -1,10 +1,11 @@
 <main class="primary-background">
   <h1 class="mat-display-3">Wesołych świąt</h1>
+  <button mat-button>Zacznij sterować</button>
   <screen></screen>
 </main>
 
 <section>
-  <switches></switches>
+  <switches [channels]="channels$ | async"></switches>
 </section>
 
 <section>

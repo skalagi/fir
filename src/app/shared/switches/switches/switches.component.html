@@ -1,3 +1,5 @@
-<p>
-  switches works!
-</p>
+<switch *ngFor="let channel of channels; trackBy: channel?.id"
+  [state]="channel.state"
+  [identity]="channel.id" 
+  [label]="channel.name">
+</switch>
