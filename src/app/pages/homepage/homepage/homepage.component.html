@@ -13,5 +13,5 @@
 </section>
 
 <section>
-  <queue></queue>
+  <queue [values]="(queue$ | async)?.value || []"></queue>
 </section>

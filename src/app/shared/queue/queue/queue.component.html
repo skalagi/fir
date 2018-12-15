@@ -1,3 +1,16 @@
-<p>
-  queue works!
-</p>
+<ul>
+  <li class="mat-body-1" *ngFor="let item of values">
+    <div class="que-element channel" *ngIf="item?.channel !== null; else led">
+      <mat-icon>
+        {{ item.state ? 'radio_button_checked' : 'radio_button_unchecked' }}
+      </mat-icon>
+    </div>
+
+    <ng-template #led>
+      <div class="que-element color"
+        [ngStyle]="{ color: 'rgb(' + item.r + ',' + item.g + ',' + item.b + ')' }">
+        <mat-icon>palette</mat-icon>
+      </div>
+    </ng-template>
+  </li>
+</ul>

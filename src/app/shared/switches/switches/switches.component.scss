@@ -1,8 +1,8 @@
 :host {
-    display: flex;
+    flex-flow: column-reverse;
     align-items: flex-start;
+    display: flex;
     padding: 64px;
-    flex-flow: column;
 }
 
 switch {

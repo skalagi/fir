@@ -18,10 +18,8 @@ import {
 
 import { StatisticsModule } from '../statistics/statistics.module';
 import { SequencerModule } from '../sequencer/sequencer.module';
-import { ChannelModule } from '../channel/channel.module';
 import { ScreenModule } from '../screen/screen.module';
 import { FirComponent } from './fir.component';
-import { QueueModule } from '../queue/queue.module';
 
 @NgModule({
   imports: [
@@ -29,8 +27,6 @@ import { QueueModule } from '../queue/queue.module';
     BrowserAnimationsModule,
     StatisticsModule,
     SequencerModule,
-    ChannelModule,
-    QueueModule,
     ScreenModule,
     MatProgressBarModule,
     MatButtonModule,
