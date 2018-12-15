@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { ChannelsService } from '../../../channel/state';
+import { ChannelsService } from '../../../service/channel';
 
 @Component({
   selector: 'switch',

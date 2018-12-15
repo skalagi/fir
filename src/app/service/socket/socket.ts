@@ -5,10 +5,12 @@ import { Subject } from 'rxjs';
   
 import { $WebSocket, WebSocketSendMode } from 'angular2-websocket/angular2-websocket';
 
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { take } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class Socket {
   private socket: $WebSocket;
   public message$: Subject<any> = new Subject();

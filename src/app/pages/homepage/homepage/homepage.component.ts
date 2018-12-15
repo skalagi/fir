@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ChannelsQuery } from '../../../channel/state';
-import { QueueQuery } from '../../../queue/state';
+import { ChannelsQuery } from '../../../service/channel';
+import { QueueQuery } from '../../../service/queue';
 
 @Component({
   selector: 'homepage',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { QueueStore } from './queue.store';
-import { ActionService } from '../../action/action.service';
+import { ActionService } from '../action/action.service';
 
 @Injectable({ providedIn: 'root' })
 export class QueueService {

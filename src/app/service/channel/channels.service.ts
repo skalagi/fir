@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ChannelsStore } from './channels.store';
-import { ActionService } from '../../action/action.service';
+import { ActionService } from '../../service/action/action.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { createChannel, Channel } from './channel.model';
