@@ -19,9 +19,11 @@ export class ActionService {
     });
   }
 
-  private resolveWhatAction({ channel, queue }) {
+  private resolveWhatAction({ channel, queue, r }) {
     if (channel !== undefined) {
       return 'channel';
+    } else if (r !== undefined) {
+      return 'color';
     } else if (queue !== undefined) {
       return 'queue';
     }
