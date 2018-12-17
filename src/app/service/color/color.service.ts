@@ -11,7 +11,6 @@ export class ColorService {
 
   constructor(private store: ColorStore, private actions: ActionService) {
     this.actions.action('color').subscribe(({ r, g, b, status }) => {
-      console.log(status);
       if (status === 'current' || status === 'executed') {
         this.store.setState(state => ({ currentColor: { r, g, b } }));
       }

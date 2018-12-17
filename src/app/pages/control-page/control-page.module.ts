@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
 
 import { ControlPageRoutingModule } from './control-page-routing.module';
 import { ControlPageComponent } from './control-page/control-page.component';
@@ -13,6 +14,7 @@ import { QueueModule } from '../../shared/queue/queue.module';
   declarations: [ControlPageComponent],
   imports: [
     CommonModule,
+    MatButtonModule,
     ControlPageRoutingModule,
     ColorPickerModule,
     SwitchesModule,

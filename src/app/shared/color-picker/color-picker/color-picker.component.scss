@@ -1,6 +1,10 @@
 $picker-height: 384px;
 $color-size: 42px;
 
+:host {
+    display: inline-block;
+}
+
 .outlet {
     position: relative;
     display: flex;

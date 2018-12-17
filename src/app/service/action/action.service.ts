@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { environment } from '../../../environments/environment';
 import { Socket } from '../socket/socket';
 import { Subject } from 'rxjs';
-import { filter, tap } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
