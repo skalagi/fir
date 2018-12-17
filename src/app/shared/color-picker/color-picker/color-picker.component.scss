@@ -14,6 +14,8 @@ $color-size: 42px;
 .thumb {
     width: $picker-height / 1.75;
     height: $picker-height / 1.75;
+    box-sizing: border-box;
+    border: 4px solid;
     border-radius: 50%;
     position: absolute;
     background: #444;
@@ -31,6 +33,7 @@ $color-size: 42px;
     position: absolute;
     width: $color-size;
     transform-origin: bottom;
+    cursor: pointer;
     top: 8px;
 
     @for $i from 1 through 18 {
