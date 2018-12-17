@@ -1,4 +1,5 @@
 <main class="primary-background">
+  <div class="shadow-screen"></div>
   <h1 class="mat-display-3">Merry christmas</h1>
   <p class="mat-body-1">Site description</p>
   <button routerLink="christmas" mat-button>START COMMANDING</button>
@@ -6,22 +7,21 @@
 </main>
 
 <section>
+  <div class="shadow-screen-bottom"></div>
   <switches [channels]="channels$ | async"></switches>
-  <div>
+  <div class="description">
     <h2 class="accent mat-display-1">Light switches</h2>
-    <p class="mat-body-1">
-      Switches description -- Click switch to turn lights or star on and off.
-      Switches have color baubles to indicates which lights they switch.
-      Swichtes also have lights which indicate their current state.
-    </p>
+    <p class="mat-body-1">Click switch to turn lights or star on and off.</p>
+    <p class="mat-body-1">Switches have color baubles to indicates which lights they switch.</p>
+    <p class="mat-body-1">Swichtes also have lights which indicate their current state.</p>
   </div>
 </section>
 
 <section>
-  <div>
+  <div class="description">
     <h2 class="accent mat-display-1">LED color</h2>
     <p class="mat-body-1">
-      LED description -- Click on color to change led lights color or move ** to change available colors shade
+      Click on color to change led lights color or move ** to change available colors shade
     </p>
   </div>
   <color-picker></color-picker>
@@ -29,16 +29,16 @@
 
 <section>
   <queue [values]="(queue$ | async)?.value || []"></queue>
-  <div>
+  <div class="description">
     <div>
-      <h2 class="accent mat-headline-1">Queue</h2>
+      <h2 class="accent mat-display-1">Queue</h2>
     </div>
 
     <div class="queue-description">
-      <p class="mat-body-1">Queue description -- queue presents inflowing data of users changes</p>
+      <p class="mat-body-1">Queue presents inflowing data of users changes</p>
 
       <div class="queue-legend">
-        <p class="mat-body-1">Queue elements</p>
+        <p class="mat-body-1">Legend</p>
         <div class="queue-legend-element" 
           *ngFor="let i of ['radio_button_unchecked', 'radio_button_checked', 'palette']">
           <mat-icon>{{ i }}</mat-icon>
