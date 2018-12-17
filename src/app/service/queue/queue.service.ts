@@ -9,7 +9,7 @@ export class QueueService {
     private store: QueueStore,
     private actions: ActionService,
   ) {
-    this.actions.action('channel', 'queue')
+    this.actions.action('channel', 'queue', 'color')
       .subscribe((message) => {
         const { queue, status } = message;
 
