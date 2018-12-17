@@ -20,10 +20,6 @@ export class Socket {
   }
 
   private init() {
-    this.message$.pipe(take(1)).subscribe(() => {
-      document.body.style.backgroundImage = 'url("assets/winter.jpg")';
-    });
-
     this.http.get(`${environment.uri}?ctrl=getEndpoint`).subscribe((socket: any) => {
       this.socket = new $WebSocket(socket.endpoint);
       this.socket.setSend4Mode(WebSocketSendMode.Direct);
