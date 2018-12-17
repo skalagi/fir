@@ -1,4 +1,6 @@
-<switch *ngFor="let channel of channels; trackBy: channel?.id"
+<div class="wood"></div>
+
+<switch *ngFor="let channel of channels; trackBy: channel?.id;"
   [state]="channel.state"
   [identity]="channel.id" 
   [label]="channel.name">

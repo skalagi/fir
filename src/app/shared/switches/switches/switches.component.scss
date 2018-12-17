@@ -1,9 +1,15 @@
 :host {
     flex-flow: column-reverse;
-    align-items: flex-start;
+    align-items: center;
     display: flex;
 }
 
 switch {
     margin: 8px 24px;
+}
+
+.wood {
+    height: 48px;
+    width: 24px;
+    background-color: #3E2723;
 }
