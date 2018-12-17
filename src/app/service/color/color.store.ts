@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Store, StoreConfig } from '@datorama/akita';
 
+export interface Color {
+  r: number;
+  g: number;
+  b: number;
+}
+
 export interface ColorState {
-  key: string;
+  currentColor: Color;
 }
 
 export function createInitialState(): ColorState {
   return {
-    key: ''
+    currentColor: null
   };
 }
 

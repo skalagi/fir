@@ -10,6 +10,11 @@ import { ActionService } from '../action/action.service';
 export class ColorService {
 
   constructor(private store: ColorStore, private actions: ActionService) {
+    this.actions.action('color').subscribe(color => {
+      const { r, g, b } = color;
+
+      this.store.setState(state => ({ currentColor: { r, g, b } }));
+    });
   }
 
   public send(color) {
