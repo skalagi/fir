@@ -20,12 +20,12 @@ export class ActionService {
   }
 
   private resolveWhatAction({ channel, queue, r }) {
-    if (channel !== undefined) {
-      return 'channel';
-    } else if (r !== undefined) {
-      return 'color';
-    } else if (queue !== undefined) {
+    if (typeof queue === 'object') {
       return 'queue';
+    } else if (typeof r === 'string' || typeof r === 'number') {
+      return 'color';
+    } else if (typeof channel === 'number') {
+      return 'channel';
     }
 
     return null;
