@@ -1,4 +1,10 @@
 :host {
     display: flex;
+    flex-flow: column;
     min-height: 100%;
+}
+
+footer {
+    text-align: center;
+    margin: 64px 0;
 }
