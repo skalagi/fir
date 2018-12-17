@@ -6,12 +6,14 @@ import { ScreenModule } from '../../shared/screen/screen.module';
 import { SwitchesModule } from '../../shared/switches/switches.module';
 import { QueueModule } from '../../shared/queue/queue.module';
 import { ColorPickerModule } from '../../shared/color-picker/color-picker.module';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [HomepageComponent],
   imports: [
     CommonModule,
+    MatIconModule,
     MatButtonModule,
     RouterModule.forChild([
       { path: '', component: HomepageComponent },

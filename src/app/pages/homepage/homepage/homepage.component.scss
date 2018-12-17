@@ -5,6 +5,21 @@
     width: 100%;
 }
 
+.queue-description {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.queue-legend {
+}
+
+.queue-legend-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 main {
     position: relative;
     padding: 48px 32px 0;
@@ -12,7 +27,14 @@ main {
 }
 
 section {
-    min-height: 50vh;
+    display: grid;
+    max-width: 100%;
+    z-index: 2;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
 }
 
 main, section {
