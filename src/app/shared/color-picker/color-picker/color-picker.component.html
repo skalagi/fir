@@ -1,3 +1,12 @@
-<p>
-  color-picker works!
-</p>
+<div class="outlet">
+  <div class="colors-origin">
+    <ng-template ngFor let-color [ngForOf]="pallette | keyvalue">
+        <div class="color" *ngIf="color.value['500']">
+          <div class="color-drop" [ngStyle]="{ backgroundColor: color.value['500'] }"
+          (click)="changeColor(color)"
+          ></div>
+        </div>
+    </ng-template>
+  </div>
+  <div class="thumb"></div>
+</div>

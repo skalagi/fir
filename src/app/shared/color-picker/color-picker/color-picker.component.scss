@@ -1,0 +1,41 @@
+$picker-height: 384px;
+$color-size: 42px;
+
+.outlet {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: $picker-height;
+    width: $picker-height;
+}
+
+.thumb {
+    width: $picker-height / 1.75;
+    height: $picker-height / 1.75;
+    border-radius: 50%;
+    position: absolute;
+    background: #444;
+}
+
+.color-drop {
+    width: $color-size;
+    height: $color-size;
+    border-radius: 50%;
+}
+
+.color {
+    transform: translateX(-($color-size / 2));
+    height: ($picker-height / 2) - 8px;
+    position: absolute;
+    width: $color-size;
+    transform-origin: bottom;
+    top: 8px;
+
+    @for $i from 1 through 18 {
+        &:nth-child(#{$i})  {
+            transform: translateX(-($color-size / 2)) rotate(360deg / 18 * $i);
+        }
+    }
+}
