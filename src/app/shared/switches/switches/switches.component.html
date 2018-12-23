@@ -1,6 +1,6 @@
 <div class="wood"></div>
 
-<switch *ngFor="let channel of channels; trackBy: channel?.id;"
+<switch *ngFor="let channel of channels"
   (toggle)="toggle($event)"
   [state]="channel.state"
   [identity]="channel.id" 

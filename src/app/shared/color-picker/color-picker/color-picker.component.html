@@ -1,6 +1,6 @@
 <div class="outlet">
   <div class="colors-origin">
-    <ng-template ngFor let-color let-index="index" [ngForOf]="pallette" [ngForTrackBy]="index">
+    <ng-template ngFor let-color [ngForOf]="pallette">
         <div class="color">
           <button mat-button class="color-drop" (click)="changeColor(color?.hex)"
             [ngStyle]="{ backgroundColor: color?.hex }"></button>
