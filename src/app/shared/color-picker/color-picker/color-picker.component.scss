@@ -1,8 +1,17 @@
 $picker-height: 358px;
-$color-size: 42px;
+$color-size: 44px;
 
 :host {
     display: inline-block;
+}
+
+mat-slider {
+    width: 100%;
+}
+
+button {
+    min-width: auto;
+    padding: 0;
 }
 
 .outlet {
@@ -20,21 +29,23 @@ $color-size: 42px;
     width: $picker-height / 1.6;
     height: $picker-height / 1.6;
     box-sizing: border-box;
-    border: 10px solid;
+    border: 32px solid;
     border-radius: 50%;
     position: absolute;
     background: #444;
-    transition: 1s cubic-bezier(0.4, 0.0, 0.2, 1);
+    transition: .4s cubic-bezier(0.4, 0.0, 0.2, 1), transform 1.5s cubic-bezier(0.4, 0.0, 0.2, 1);
 
     &::after, &::before {
         position: absolute;
         content: '';
         left: 0;
-        top: 0;
     }
 
     &::before {
-        border: 32px solid;
+        border: 64px solid;
+        border-radius: 16px;
+        left: -18px;
+        top: -18px;
         transition: border .4s cubic-bezier(0.4, 0.0, 0.2, 1);
     }
 
@@ -56,17 +67,17 @@ $color-size: 42px;
 .color-drop {
     width: $color-size;
     height: $color-size;
-    border-radius: 12px / 16px;
+    border-radius: 14px / 18px;
 }
 
 .color {
     $shift: 12px;
+    z-index: 3;
     transform: translateX(-($color-size / 2));
     height: ($picker-height / 2) - $shift;
     position: absolute;
     width: $color-size;
     transform-origin: bottom;
-    cursor: pointer;
     top: $shift;
 
     @for $i from 1 through 18 {
