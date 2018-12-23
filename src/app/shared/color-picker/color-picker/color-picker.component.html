@@ -1,12 +1,12 @@
 <div class="outlet">
   <div class="colors-origin">
-    <ng-template ngFor let-color [ngForOf]="pallette | keyvalue">
-        <div class="color" *ngIf="color.value['500']">
-          <div class="color-drop" [ngStyle]="{ backgroundColor: color.value['500'] }"
+    <ng-template ngFor let-color let-index="index" [ngForOf]="pallette" [ngForTrackBy]="index">
+        <div class="color">
+          <div class="color-drop" [ngStyle]="{ backgroundColor: color['500'] }"
           (click)="changeColor(color)"
           ></div>
         </div>
     </ng-template>
   </div>
-  <div class="thumb" [ngStyle]="{ color: color }"></div>
+  <div class="thumb" [ngStyle]="{ color: color, transform: thumbPosition }"></div>
 </div>
