@@ -1,4 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { channelColors } from '../../../service/channel';
 
 @Component({
   selector: 'switch',
@@ -14,7 +15,7 @@ export class SwitchComponent {
   @Output() toggle = new EventEmitter;
 
   get color() {
-    return ['white', 'red', 'blue'][this.identity];
+    return channelColors[this.identity];
   }
 
   toggleColor() {
