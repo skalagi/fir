@@ -4,6 +4,7 @@ import { ChannelsQuery } from '../../../service/channel';
 import { QueueQuery } from '../../../service/queue';
 import { ColorQuery } from '../../../service/color';
 import { map, filter } from 'rxjs/operators';
+import { ScreenQuery } from '../../../service/screen';
 
 @Component({
   selector: 'control-page',
@@ -12,16 +13,19 @@ import { map, filter } from 'rxjs/operators';
 })
 export class ControlPageComponent implements OnInit {
   channels$;
+  screen$;
   queue$;
   color$;
 
   constructor(
     private channelQ: ChannelsQuery,
     private colorQ: ColorQuery,
+    private screenQ: ScreenQuery,
     private queueQ: QueueQuery,
   ) { }
 
   ngOnInit() {
+    this.screen$ = this.screenQ.select(state => state.url);
     this.channels$ = this.channelQ.all$;
     this.queue$ = this.queueQ.show$;
     this.color$ = this.colorQ.select(state => state.currentColor)

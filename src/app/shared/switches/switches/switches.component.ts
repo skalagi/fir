@@ -8,7 +8,7 @@ import { ChannelsService } from '../../../service/channel';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SwitchesComponent {
-  constructor(private channel: ChannelsService) { }
+  constructor(public channel: ChannelsService) { }
   @Input() channels;
 
   toggle({ identity, state }) {
