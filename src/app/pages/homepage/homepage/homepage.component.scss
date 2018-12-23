@@ -46,12 +46,12 @@ screen {
     width: 810px;
 }
 
-queue {
-    // width: 100%;
+.queue-section {
+    margin: auto;
 }
 
 .queue-description {
-    display: grid;
+    display: inline-grid;
     grid-gap: 24px;
     grid-template-columns: 1fr 1fr;
 }
