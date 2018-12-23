@@ -1,7 +1,7 @@
 <main class="primary-background">
   <div class="hero">
     <h1 class="mat-display-3">Merry christmas</h1>
-    <p class="mat-body-1">Site description</p>
+    <p class="mat-body-1">Automated christmas tree lights which can be controlled from anywhere in the world</p>
     <button routerLink="christmas" mat-button>START COMMANDING</button>
   </div>
   <screen></screen>
@@ -11,40 +11,41 @@
   <switches [channels]="channels"></switches>
   <div>
     <h2 class="accent mat-display-1">Light switches</h2>
-    <p class="mat-title">Click switch to turn lights or star on and off.</p>
-    <p class="mat-title">Switches have color baubles to indicates which lights they switch.</p>
-    <p class="mat-title">Swichtes also have lights which indicate their current state.</p>
+    <p class="mat-subheading-2">Click switch to turn lights or star on and off.</p>
+    <p class="mat-subheading-2">Switches have color baubles to indicates which lights they switch.</p>
+    <p class="mat-subheading-2">Swichtes also have lights which indicate their current state.</p>
   </div>
 </section>
 
 <section class="description">
   <div>
     <h2 class="accent mat-display-1">LED ring color</h2>
-    <p class="mat-title">
+    <p class="mat-subheading-2">
       Click on color to change led lights color
     </p>
-    <p class="mat-title">
-      Move slider to change available colors shade
+    <p class="mat-subheading-2">
+      Something fun!
     </p>
   </div>
   <color-picker color="#b71c1c"></color-picker>
 </section>
 
 <section class="queue-section">
-  <h2 class="accent mat-display-1">Queue</h2>
   
   <queue [values]="queue"></queue>
 
   <div class="queue-description">
-    <p class="mat-title">Queue presents inflowing data of users changes</p>
+    <h2 class="accent mat-display-1">Queue</h2>
+    <p class="mat-subheading-2">Queue presents inflowing data of users changes</p>
+  </div>
 
-    <div class="queue-legend">
-      <p class="mat-title">Legend</p>
-      <div class="queue-legend-element" 
-        *ngFor="let item of queueDescription">
-        <mat-icon>{{ item.icon }}</mat-icon>
-        <p class="mat-subtitle">{{ item?.description }}</p>
-      </div>
+  <div class="queue-legend">
+    <p class="mat-subheading-1">Legend</p>
+
+    <div class="queue-legend-element" 
+      *ngFor="let item of queueDescription">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <p class="mat-subheading-1">{{ item?.description }}</p>
     </div>
   </div>
 </section>

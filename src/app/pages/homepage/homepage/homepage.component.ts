@@ -13,15 +13,15 @@ export class HomepageComponent {
   ];
 
   queue = [
-    { r: 255, g: 0, b: 0 },
+    { r: 230, g: 74, b: 25 },
     { channel: 0 },
-    { r: 0, g: 255, b: 0 },
+    { r: 48, g: 63, b: 159 },
     { channel: 1 },
     { channel: 2, state: true },
-    { r: 0, g: 255, b: 0 },
+    { r: 211, g: 47, b: 47 },
     { channel: 1, state: true },
-    { r: 0, g: 0, b: 255 },
-    { r: 0, g: 255, b: 0 },
+    { r: 48, g: 63, b: 159 },
+    { r: 230, g: 74, b: 25 },
     { channel: 2, state: true },
   ];
 

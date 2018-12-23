@@ -25,6 +25,7 @@ main {
     box-sizing: border-box;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 48px;
 
     h1, p, button {
         margin: 0 32px;
@@ -34,15 +35,16 @@ main {
     }
 }
 
-section {
-    max-width: 100%;
-    z-index: 2;
-}
-
 screen {
     overflow: hidden;
     position: relative;
     top: 48px;
+}
+
+
+section {
+    max-width: 100%;
+    z-index: 2;
 }
 
 .queue-section {
