@@ -20,7 +20,7 @@ export class ScreenComponent implements OnInit {
       .select(state => state.url)
       .pipe(map(url => {
         return this.dom.bypassSecurityTrustResourceUrl(`
-          http://www.youtube.com/embed/${ url }?autoplay=1
+          http://www.youtube.com/embed/${ url }?autoplay=1&controls=0&mute=1&showinfo=0&modestbranding=1
         `);
       }));
   }
