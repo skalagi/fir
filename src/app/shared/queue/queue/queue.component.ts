@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class QueueComponent {
   @Input() values;
+  colors = ['white', '#B71C1C', '#2979FF'];
 }
