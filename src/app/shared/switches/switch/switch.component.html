@@ -1,4 +1,9 @@
 <button mat-flat-button (click)="toggleColor()"
-    [color]="state ? 'accent' : 'primary'"
+    color="accent"
     [ngClass]="'channel-' + identity">
+
+    <svg *ngIf="state" xmlns="http://www.w3.org/2000/svg" width="300" height="100" version="1.1">
+        <path d="M10 30 C 70 20, 40 20, 200 60" [attr.stroke]="color" fill="transparent"/>
+    </svg>
+      
 </button>
