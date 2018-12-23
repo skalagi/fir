@@ -1,5 +1,5 @@
 export const environment = {
-  uri: 'http://robertbrzoza.pl:8000',
+  uri: 'http://192.168.1.12',
   restartDelay: 3000,
   production: false,
 };
