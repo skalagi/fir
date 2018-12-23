@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { channelColors } from '../../../service/channel';
 
 @Component({
   selector: 'queue',
@@ -6,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./queue.component.scss']
 })
 export class QueueComponent {
+  colors = channelColors;
   @Input() values;
-  colors = ['white', '#B71C1C', '#2979FF'];
 }

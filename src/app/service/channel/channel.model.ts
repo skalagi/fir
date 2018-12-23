@@ -1,5 +1,6 @@
 import { ID } from '@datorama/akita';
 
+export const channelColors = ['white', '#B71C1C', '#2979FF'];
 export interface Channel {
   id: ID;
   state: boolean;
