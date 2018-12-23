@@ -7,6 +7,6 @@
 <queue [values]="(queue$ | async)?.value || []"></queue>
 
 <main>
-    <switches [channels]="channels$ | async"></switches>
+    <switches [channels]="channels$ | async" (channelToggled)="toggleSwitch($event)"></switches>
     <color-picker [color]="color$ | async"></color-picker>
 </main>

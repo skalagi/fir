@@ -1,5 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { ChannelsService } from '../../../service/channel';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'switches',
@@ -8,10 +7,10 @@ import { ChannelsService } from '../../../service/channel';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SwitchesComponent {
-  constructor(public channel: ChannelsService) { }
+  @Output() channelToggled = new EventEmitter();
   @Input() channels;
 
   toggle({ identity, state }) {
-    this.channel.toggle(identity, state);
+    this.channelToggled.next({ identity, state })
   }
 }

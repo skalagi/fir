@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ChannelsQuery } from '../../../service/channel';
+import { ChannelsQuery, ChannelsService } from '../../../service/channel';
 import { QueueQuery } from '../../../service/queue';
 import { ColorQuery } from '../../../service/color';
 import { map, filter } from 'rxjs/operators';
@@ -19,10 +19,15 @@ export class ControlPageComponent implements OnInit {
 
   constructor(
     private channelQ: ChannelsQuery,
+    public channel: ChannelsService,
     private colorQ: ColorQuery,
     private screenQ: ScreenQuery,
     private queueQ: QueueQuery,
   ) { }
+  
+  toggleSwitch({ identity, state }) {
+    this.channel.toggle(identity, state);
+  }
 
   ngOnInit() {
     this.screen$ = this.screenQ.select(state => state.url);
