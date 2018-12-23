@@ -2,11 +2,11 @@
   <div class="colors-origin">
     <ng-template ngFor let-color let-index="index" [ngForOf]="pallette" [ngForTrackBy]="index">
         <div class="color">
-          <div class="color-drop" [ngStyle]="{ backgroundColor: color['500'] }"
-          (click)="changeColor(color)"
-          ></div>
+          <div class="color-drop" (click)="changeColor(color)"
+            [ngStyle]="{ backgroundColor: color['500'] }"></div>
         </div>
     </ng-template>
   </div>
-  <div class="thumb" [ngStyle]="{ color: color, transform: thumbPosition }"></div>
+  <div class="thumb" [ngStyle]="{ color: color, transform: thumbPosition }"
+    [ngClass]="{ 'null-direction': !thumbPosition }"></div>
 </div>

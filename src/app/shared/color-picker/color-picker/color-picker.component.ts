@@ -34,11 +34,13 @@ export class ColorPickerComponent {
         const { red, green, blue } = hexToRgb(color['500']);
         return `rgb(${ red }, ${ green }, ${ blue })` === this.color;
       }) + 1;
+    } 
+
+    if (i === 0) {
+      return false;
     }
 
-    if (!i) {
-      return ''
-    } else if (i === 19) {
+    if (i === 19) {
       i = 18;
     }
 
