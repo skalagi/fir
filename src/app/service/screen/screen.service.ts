@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ScreenStore } from './screen.store';
 import { HttpClient } from '@angular/common/http';
-import { ServerResponse } from 'http';
 import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
