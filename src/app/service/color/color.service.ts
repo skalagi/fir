@@ -21,7 +21,7 @@ export class ColorService {
     const { red: r, green: g, blue: b } = converter(color['500']);
 
     this.actions.change({
-      controller: 'ChangeState',
+      controller: 'ChangeColor',
       value: {
         id: guid(),
         r, g, b,
