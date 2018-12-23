@@ -1,24 +1,22 @@
 <main class="primary-background">
-  <div class="shadow-screen"></div>
   <h1 class="mat-display-3">Merry christmas</h1>
   <p class="mat-body-1">Site description</p>
   <button routerLink="christmas" mat-button>START COMMANDING</button>
   <screen></screen>
 </main>
 
-<section>
-  <div class="shadow-screen-bottom"></div>
+<section class="description">
   <switches [channels]="channels$ | async"></switches>
-  <div class="description">
+  <div>
     <h2 class="accent mat-display-1">Light switches</h2>
-    <p class="mat-body-1">Click switch to turn lights or star on and off.</p>
-    <p class="mat-body-1">Switches have color baubles to indicates which lights they switch.</p>
-    <p class="mat-body-1">Swichtes also have lights which indicate their current state.</p>
+    <p class="mat-title">Click switch to turn lights or star on and off.</p>
+    <p class="mat-title">Switches have color baubles to indicates which lights they switch.</p>
+    <p class="mat-title">Swichtes also have lights which indicate their current state.</p>
   </div>
 </section>
 
-<section>
-  <div class="description">
+<section class="description">
+  <div>
     <h2 class="accent mat-display-1">LED color</h2>
     <p class="mat-body-1">
       Click on color to change led lights color or move ** to change available colors shade
@@ -29,7 +27,7 @@
 
 <section>
   <queue [values]="(queue$ | async)?.value || []"></queue>
-  <div class="description">
+  <div>
     <div>
       <h2 class="accent mat-display-1">Queue</h2>
     </div>
