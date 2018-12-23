@@ -18,7 +18,7 @@ export class ColorService {
   }
 
   public send(color) {
-    const { red: r, green: g, blue: b } = converter(color['500']);
+    const { red: r, green: g, blue: b } = converter(color);
 
     this.actions.change({
       controller: 'ChangeColor',

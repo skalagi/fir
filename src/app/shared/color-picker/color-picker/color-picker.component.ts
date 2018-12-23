@@ -1,7 +1,8 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import * as colors from 'material-colors';
 import { ColorService } from '../../../service/color';
 import * as hexToRgb from 'hex-rgb';
+
+import { pallette } from './pallette';
 @Component({
   selector: 'color-picker',
   templateUrl: './color-picker.component.html',
@@ -10,12 +11,11 @@ import * as hexToRgb from 'hex-rgb';
 })
 export class ColorPickerComponent {
   constructor(private led: ColorService) { }
+  pallette = pallette;
   @Input() color;
 
-  get pallette() {
-    return Object.keys(colors)
-      .map(colorKey => colors[colorKey])
-      .filter(color => color['500']);
+  ngOnInit() {
+    console.log(this.color);
   }
 
   changeColor(color) {
@@ -27,11 +27,11 @@ export class ColorPickerComponent {
 
     if (this.color) {
       i = this.pallette.findIndex(color => {
-        if (!color['500']) {
+        if (!color) {
           return false;
         }
 
-        const { red, green, blue } = hexToRgb(color['500']);
+        const { red, green, blue } = hexToRgb(color.hex);
         return `rgb(${ red }, ${ green }, ${ blue })` === this.color;
       }) + 1;
     } 
