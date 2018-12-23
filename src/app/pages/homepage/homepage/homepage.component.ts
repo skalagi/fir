@@ -12,6 +12,12 @@ export class HomepageComponent implements OnInit {
   channels$;
   queue$;
 
+  queue = [
+    { icon: 'radio_button_unchecked', description: 'turn off lights part' },
+    { icon: 'radio_button_checked', description: 'turn on lights part' },
+    { icon: 'palette', description: 'led ring color change' },
+  ];
+
   constructor(
     private channelQ: ChannelsQuery,
     private queueQ: QueueQuery,

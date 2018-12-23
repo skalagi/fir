@@ -1,7 +1,9 @@
 <main class="primary-background">
-  <h1 class="mat-display-3">Merry christmas</h1>
-  <p class="mat-body-1">Site description</p>
-  <button routerLink="christmas" mat-button>START COMMANDING</button>
+  <div class="hero">
+    <h1 class="mat-display-3">Merry christmas</h1>
+    <p class="mat-body-1">Site description</p>
+    <button routerLink="christmas" mat-button>START COMMANDING</button>
+  </div>
   <screen></screen>
 </main>
 
@@ -17,9 +19,12 @@
 
 <section class="description">
   <div>
-    <h2 class="accent mat-display-1">LED color</h2>
-    <p class="mat-body-1">
-      Click on color to change led lights color or move ** to change available colors shade
+    <h2 class="accent mat-display-1">LED ring color</h2>
+    <p class="mat-title">
+      Click on color to change led lights color
+    </p>
+    <p class="mat-title">
+      Move slider to change available colors shade
     </p>
   </div>
   <color-picker></color-picker>
@@ -33,14 +38,14 @@
     </div>
 
     <div class="queue-description">
-      <p class="mat-body-1">Queue presents inflowing data of users changes</p>
+      <p class="mat-title">Queue presents inflowing data of users changes</p>
 
       <div class="queue-legend">
-        <p class="mat-body-1">Legend</p>
+        <p class="mat-title">Legend</p>
         <div class="queue-legend-element" 
-          *ngFor="let i of ['radio_button_unchecked', 'radio_button_checked', 'palette']">
-          <mat-icon>{{ i }}</mat-icon>
-          <p class="mat-body-1">description</p>
+          *ngFor="let item of queue">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <p class="mat-subtitle">{{ item?.description }}</p>
         </div>
       </div>
     </div>

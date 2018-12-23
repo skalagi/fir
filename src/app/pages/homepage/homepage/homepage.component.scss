@@ -5,6 +5,10 @@
     width: 100%;
 }
 
+.hero {
+    display: grid;
+}
+
 main, section {
     grid-column-start: 1;
     grid-column-end: 9;
@@ -19,6 +23,8 @@ main, section {
 main {
     position: relative;
     box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
 
     h1, p, button {
         margin: 0 32px;
@@ -34,13 +40,14 @@ section {
 }
 
 screen {
-    height: 512px;
     overflow: hidden;
-    width: 60vw;
+    position: relative;
+    top: 48px;
+    width: 810px;
 }
 
 queue {
-    width: 100%;
+    // width: 100%;
 }
 
 .queue-description {
