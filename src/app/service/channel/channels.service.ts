@@ -18,10 +18,11 @@ export class ChannelsService {
   }
 
   private init() {
-    this.http.get(`${environment.uri}?ctrl=getChannels`)
-      .subscribe((channels: Channel[]) => {
-        this.store.set(channels.map(createChannel));
-      });
+    this.store.set([
+      { id: 0, state: false },
+      { id: 1, state: false },
+      { id: 2, state: false },
+    ].map(createChannel));
   }
 
   private updates() {    
