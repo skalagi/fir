@@ -27,8 +27,8 @@ export class Socket {
       this.socket.onMessage((event: any) => {
         const message = JSON.parse(event.data);
 
-        if (message.error) {
-          this.snack.open(message.error.reason + '', 'got it', { panelClass: 'warn' });
+        if (message.reason) {
+          this.snack.open(message.reason + '', 'got it', { panelClass: 'warn' });
         } else {
           this.message$.next(message);
         }
