@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ChannelsQuery, ChannelsService } from '../../../service/channel';
 import { QueueQuery } from '../../../service/queue';
-import { ColorQuery } from '../../../service/color';
+import { ColorQuery, ColorService } from '../../../service/color';
 import { map, filter } from 'rxjs/operators';
 import { ScreenQuery } from '../../../service/screen';
 
@@ -23,7 +23,12 @@ export class ControlPageComponent implements OnInit {
     private colorQ: ColorQuery,
     private screenQ: ScreenQuery,
     private queueQ: QueueQuery,
+    private led: ColorService,
   ) { }
+
+  changeColor(color) {
+    this.led.send(color);
+  }
   
   toggleSwitch({ identity, state }) {
     this.channel.toggle(identity, state);

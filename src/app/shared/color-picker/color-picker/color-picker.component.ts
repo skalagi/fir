@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, EventEmitter, Output } from '@angular/core';
 import { ColorService } from '../../../service/color';
 import * as hexToRgb from 'hex-rgb';
 
@@ -11,15 +11,12 @@ import { pallette } from './pallette';
 })
 export class ColorPickerComponent {
   constructor(private led: ColorService) { }
+  @Output() colorChange = new EventEmitter();
   pallette = pallette;
   @Input() color;
 
-  ngOnInit() {
-    console.log(this.color);
-  }
-
   changeColor(color) {
-    this.led.send(color);
+    this.colorChange.next(color);
   }
 
   get thumbPosition() {

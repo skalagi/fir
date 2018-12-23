@@ -8,5 +8,5 @@
 
 <main>
     <switches [channels]="channels$ | async" (channelToggled)="toggleSwitch($event)"></switches>
-    <color-picker [color]="color$ | async"></color-picker>
+    <color-picker (colorChange)="changeColor($event)" [color]="color$ | async"></color-picker>
 </main>
