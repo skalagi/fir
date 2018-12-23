@@ -6,8 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
-  channels = [];
-  queue = [];
+  channels = [
+    { id: 0, state: true },
+    { id: 1, state: true },
+    { id: 2, state: true },
+  ];
+
+  queue = [{}, {}, {}, {}, {}, {}];
 
   queueDescription = [
     { icon: 'radio_button_unchecked', description: 'turn off lights part' },
