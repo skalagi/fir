@@ -1,23 +1,23 @@
 
 <section class="description">
-  <div>
+  <div class="text">
     <h2 class="accent mat-display-1">Light switches</h2>
     <p class="mat-subheading-2">Click switch to turn lights on and off.</p>
     <p class="mat-subheading-2">Switches have decorations when lights are turned on.</p>
   </div>
-  <switches [channels]="channels"></switches>
+  <switches [channels]="channels" (channelToggled)="showControlls()"></switches>
 </section>
 
 <section class="description">
-  <color-picker color="#b71c1c"></color-picker>
-  <div>
+  <color-picker color="#b71c1c" (colorChange)="showControlls()"></color-picker>
+  <div class="text">
     <h2 class="accent mat-display-1">LED ring</h2>
     <p class="mat-subheading-2">Click color to change color of led ring</p>
   </div>
 </section>
 
 <section class="description">
-  <div class="queue-description">
+  <div class="queue-description text">
     <h2 class="accent mat-display-1">Queue</h2>
     <p class="mat-subheading-2">Queue presents inflowing data of users changes.</p>
     <p class="mat-subheading-2">Moment when change occurs, it has wait until erenow changes are performed.</p>

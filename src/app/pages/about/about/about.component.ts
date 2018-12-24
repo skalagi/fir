@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'about',
@@ -7,7 +8,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent {
+  constructor(private router: Router) {}
 
+  showControlls() {
+    this.router.navigate(['/christmas']);
+  }
+ 
   channels = [
     { id: 0, state: true },
     { id: 1, state: true },
