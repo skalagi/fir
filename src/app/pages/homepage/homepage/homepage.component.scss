@@ -40,6 +40,10 @@ main {
     }
 }
 
+.noe {
+    display: none;
+}
+
 screen {
     // overflow: hidden;
     position: relative;
@@ -49,6 +53,14 @@ screen {
 }
 
 @media (max-width: 1200px) {
+    main {
+        text-align: center;
+
+        &.isHomepage {
+            padding-right: 0;
+        }
+    }
+
     .isHomepage screen {
         display: none;
     }
