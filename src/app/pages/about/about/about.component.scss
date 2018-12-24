@@ -10,6 +10,16 @@ section {
     z-index: 2;
 }
 
+.description {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.actions {
+    margin: 48px;
+}
+
 queue {
     margin-bottom: 24px;
 }
@@ -25,16 +35,6 @@ queue {
     }
 }
 
-.description {
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.actions {
-    margin: 48px;
-}
-
 .queue-description {
     //grid-row-start: 1;
     // grid-row-end: 3;
@@ -42,7 +42,7 @@ queue {
 
 .queue-legend-element {
     p {
-        margin: 6px;
+        margin: 8px;
     }
     display: flex;
     justify-content: space-between;
