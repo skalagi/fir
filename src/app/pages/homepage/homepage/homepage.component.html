@@ -4,7 +4,7 @@
   </a>
 </nav>
 
-<main class="primary-background" [ngClass]="{ 'isHomepage': (url$ | async) !== '/christmas' }">
+<main class="primary-background shadow" [ngClass]="{ 'isHomepage': (url$ | async) !== '/christmas' }">
   <div class="hero" *ngIf="(url$ | async) !== '/christmas'">
     <h1 class="mat-display-3">Merry christmas</h1>
     <p class="mat-subheading-2">Automated christmas tree lights which can be controlled from anywhere in the world</p>
