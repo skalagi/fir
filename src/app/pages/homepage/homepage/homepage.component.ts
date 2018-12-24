@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { map, filter } from 'rxjs/operators';
 
 @Component({
   selector: 'homepage',
@@ -6,28 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent {
-  channels = [
-    { id: 0, state: true },
-    { id: 1, state: true },
-    { id: 2, state: true },
-  ];
-
-  queue = [
-    { r: 230, g: 74, b: 25 },
-    { channel: 0 },
-    { r: 48, g: 63, b: 159 },
-    { channel: 1 },
-    { channel: 2, state: true },
-    { r: 211, g: 47, b: 47 },
-    { channel: 1, state: true },
-    { r: 48, g: 63, b: 159 },
-    { r: 230, g: 74, b: 25 },
-    { channel: 2, state: true },
-  ];
-
-  queueDescription = [
-    { icon: 'radio_button_unchecked', description: 'turn off lights part' },
-    { icon: 'radio_button_checked', description: 'turn on lights part' },
-    { icon: 'palette', description: 'led ring color change' },
-  ];
+  constructor(private router: Router) { }
+  url$;
+  
+  ngOnInit() {
+    this.url$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map(() => this.router.url)
+    );
+  }
 }

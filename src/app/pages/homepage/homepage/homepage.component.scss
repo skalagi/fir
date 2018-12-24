@@ -1,7 +1,4 @@
 :host {
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(8, 1fr);
-    display: grid;
     width: 100%;
 }
 
@@ -9,25 +6,39 @@
     display: grid;
 }
 
-main, section {
-    grid-column-start: 1;
-    grid-column-end: 9;
+nav {
+    position: sticky;
+    z-index: 4;
+    top: 0;
+    
+    mat-icon {
+        $size: 16px;
+        height: $size;
+        font-size: $size;
+        width: $size;
+    }
 }
 
-.description {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+@media (max-width: 1200px) {
+    screen.isHomepage {
+        display: none;
+        padding-right: 0;
+    }
 }
 
 main {
+    &.isHomepage {
+        padding-right: 32px;
+    }
+
+    min-height: 420px;
     position: relative;
     box-sizing: border-box;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 48px;
+    margin-bottom: 96px;
 
-    h1, p, button {
+    h1, p, a {
         margin: 0 32px;
     }
     h1 {
@@ -36,29 +47,9 @@ main {
 }
 
 screen {
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
+    height: 420px;
+    flex-grow: 1;
     top: 48px;
-}
-
-
-section {
-    max-width: 100%;
-    z-index: 2;
-}
-
-.queue-section {
-    margin: auto;
-}
-
-.queue-description {
-    display: inline-grid;
-    grid-gap: 24px;
-    grid-template-columns: 1fr 1fr;
-}
-
-.queue-legend-element {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }

@@ -1,5 +1,5 @@
 export const environment = {
-  uri: 'http://192.168.1.12',
+  uri: 'https://api.tree18.live',
   restartDelay: 3000,
   production: false,
 };

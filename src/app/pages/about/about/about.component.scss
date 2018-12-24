@@ -1,0 +1,50 @@
+
+:host {
+    display: grid;
+    grid-gap: 96px;
+    margin: 0 48px;
+}
+
+section {
+    max-width: 100%;
+    z-index: 2;
+}
+
+queue {
+    margin-bottom: 24px;
+}
+
+.queue-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 48px;
+    
+    .mat-display-1 {
+        margin: 0;
+    }
+}
+
+.description {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.actions {
+    margin: 48px;
+}
+
+.queue-description {
+    //grid-row-start: 1;
+    // grid-row-end: 3;
+}
+
+.queue-legend-element {
+    p {
+        margin: 6px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

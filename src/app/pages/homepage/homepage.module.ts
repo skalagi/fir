@@ -3,25 +3,21 @@ import { CommonModule } from '@angular/common';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RouterModule } from '@angular/router';
 import { ScreenModule } from '../../shared/screen/screen.module';
-import { SwitchesModule } from '../../shared/switches/switches.module';
-import { QueueModule } from '../../shared/queue/queue.module';
-import { ColorPickerModule } from '../../shared/color-picker/color-picker.module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [HomepageComponent],
+  exports: [HomepageComponent],
   imports: [
     CommonModule,
     MatIconModule,
-    MatButtonModule,
+    MatButtonModule,/*
     RouterModule.forChild([
       { path: '', component: HomepageComponent },
-    ]),
-    ColorPickerModule,
-    SwitchesModule,
+    ]),*/
+    RouterModule,
     ScreenModule,
-    QueueModule,
   ]
 })
 export class HomepageModule { }

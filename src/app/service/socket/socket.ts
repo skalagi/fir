@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
-import { Subject } from 'rxjs';
+import { Subject, combineLatest } from 'rxjs';
   
 import { $WebSocket, WebSocketSendMode } from 'angular2-websocket/angular2-websocket';
 
@@ -20,20 +20,21 @@ export class Socket {
   }
 
   private init() {
-    this.http.get(`${environment.uri}?ctrl=getEndpoint`).subscribe((socket: any) => {
-      this.socket = new $WebSocket(socket.endpoint);
-      this.socket.setSend4Mode(WebSocketSendMode.Direct);
+    this.http.get(`${environment.uri}?ctrl=getEndpoint`)
+      .subscribe((socket: any) => {
+        this.socket = new $WebSocket(socket.endpoint);
+          this.socket.setSend4Mode(WebSocketSendMode.Direct);
 
-      this.socket.onMessage((event: any) => {
-        const message = JSON.parse(event.data);
+          this.socket.onMessage((event: any) => {
+            const message = JSON.parse(event.data);
 
-        if (message.reason) {
-          this.snack.open(message.reason + '', 'got it', { panelClass: 'warn' });
-        } else {
-          this.message$.next(message);
-        }
+            if (message.reason) {
+              this.snack.open(message.reason + '', 'got it', { panelClass: 'warn' });
+            } else {
+              this.message$.next(message);
+            }
+        });
       });
-    });
   }
 
   public restart() {

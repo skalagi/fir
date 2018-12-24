@@ -9,6 +9,7 @@ import { ColorPickerModule } from '../../shared/color-picker/color-picker.module
 import { SwitchesModule } from '../../shared/switches/switches.module';
 import { ScreenModule } from '../../shared/screen/screen.module';
 import { QueueModule } from '../../shared/queue/queue.module';
+import { MatIconModule } from '@angular/material';
 
 @NgModule({
   declarations: [ControlPageComponent],
@@ -18,6 +19,7 @@ import { QueueModule } from '../../shared/queue/queue.module';
     ControlPageRoutingModule,
     ColorPickerModule,
     SwitchesModule,
+    MatIconModule,
     ScreenModule,
     QueueModule,
   ]

@@ -1,0 +1,41 @@
+
+<section class="queue-section">
+  
+  <h2 class="accent mat-display-1">Queue</h2>
+  <h2 class="accent mat-display-1">Queue legend</h2>
+
+  <div class="queue-description">
+    <queue [values]="queue"></queue>
+    <p class="mat-subheading-2">Queue presents inflowing data of users changes.</p>
+    <p class="mat-subheading-2">Moment when change occurs, it has wait until erenow changes are performed.</p>
+  </div>
+
+  <div class="queue-legend">
+    <div class="queue-legend-element" 
+      *ngFor="let item of queueDescription">
+      <mat-icon>{{ item.icon }}</mat-icon>
+      <p class="mat-subheading-1">{{ item?.description }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="description">
+  <div>
+    <h2 class="accent mat-display-1">Light switches</h2>
+    <p class="mat-subheading-2">Click switch to turn lights on and off.</p>
+    <p class="mat-subheading-2">Switches have decorations when lights are turned on.</p>
+  </div>
+  <switches [channels]="channels"></switches>
+</section>
+
+<section class="description">
+  <color-picker color="#b71c1c"></color-picker>
+  <div>
+    <h2 class="accent mat-display-1">LED ring</h2>
+    <p class="mat-subheading-2">Click color to change color of led ring</p>
+  </div>
+</section>
+
+<section class="actions description">
+  <button routerLink="/christmas" color="accent" mat-flat-button>START COMMANDING</button>
+</section>

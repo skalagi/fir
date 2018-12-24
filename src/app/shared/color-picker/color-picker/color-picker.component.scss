@@ -3,6 +3,7 @@ $color-size: 28px;
 
 :host {
     display: inline-block;
+    overflow: hidden;
 }
 
 mat-slider {
