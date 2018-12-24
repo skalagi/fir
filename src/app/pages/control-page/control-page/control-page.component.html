@@ -1,6 +1,12 @@
 <queue [values]="(queue$ | async)?.value || []"></queue>
 
 <main>
-    <color-picker (colorChange)="changeColor($event)" [color]="color$ | async"></color-picker>
-    <switches [channels]="channels$ | async" (channelToggled)="toggleSwitch($event)"></switches>
+    <div>
+        <color-picker (colorChange)="changeColor($event)" [color]="color$ | async"></color-picker>
+        <p class="mat-subheading-1">Choose color of led ring</p>
+    </div>
+    <div>
+        <switches [channels]="channels$ | async" (channelToggled)="toggleSwitch($event)"></switches>
+        <p class="mat-subheading-1">Click christmas tree part to change it lights state</p>
+    </div>
 </main>
