@@ -12,17 +12,11 @@ nav {
     top: 0;
     
     mat-icon {
+        margin: 0 4px;
         $size: 16px;
         height: $size;
         font-size: $size;
         width: $size;
-    }
-}
-
-@media (max-width: 1200px) {
-    screen.isHomepage {
-        display: none;
-        padding-right: 0;
     }
 }
 
@@ -52,4 +46,10 @@ screen {
     height: 420px;
     flex-grow: 1;
     top: 48px;
+}
+
+@media (max-width: 1200px) {
+    .isHomepage screen {
+        display: none;
+    }
 }

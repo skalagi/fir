@@ -9,4 +9,8 @@ main {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+
+    & > * {
+        margin: 32px 0;
+    }
 }

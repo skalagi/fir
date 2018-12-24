@@ -2,7 +2,6 @@
 :host {
     display: grid;
     grid-gap: 96px;
-    margin: 0 48px;
 }
 
 section {
@@ -10,10 +9,15 @@ section {
     z-index: 2;
 }
 
+.text {
+    margin-bottom: 24px;
+}
+
 .description {
     display: inline-flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .actions {
@@ -47,4 +51,14 @@ queue {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 700px) {
+    .description {
+        text-align: center;
+    }
+
+    color-picker {
+        order: 2;
+    }
 }
