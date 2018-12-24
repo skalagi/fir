@@ -4,13 +4,13 @@
   </a>
 </nav>
 
-<main class="primary-background" [ngClass]="{ 'isHomepage': (url$ | async) === '/' }">
-  <div class="hero" *ngIf="(url$ | async) === '/'">
+<main class="primary-background" [ngClass]="{ 'isHomepage': (url$ | async) !== '/christmas' }">
+  <div class="hero" *ngIf="(url$ | async) !== '/christmas'">
     <h1 class="mat-display-3">Merry christmas</h1>
     <p class="mat-subheading-2">Automated christmas tree lights which can be controlled from anywhere in the world</p>
     <div>
       <a routerLink="christmas" mat-button>START COMMANDING</a>
-      <a routerLink="about" mat-button>READ MORE</a>
+      <a *ngIf="(url$ | async) !== '/about'" routerLink="about" mat-button>READ MORE</a>
     </div>
   </div>
   <screen></screen>
