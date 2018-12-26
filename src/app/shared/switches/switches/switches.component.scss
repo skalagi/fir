@@ -1,0 +1,27 @@
+:host {
+    position: relative;
+    flex-flow: column-reverse;
+    align-items: center;
+    display: inline-flex;
+    padding-bottom: 48px;
+    overflow: hidden;
+}
+
+switch {
+    margin: 8px 24px;
+}
+
+.wood {
+    height: 90%;
+    position: absolute;
+    top: 20%;
+    width: 26px;
+    background-color: #3E2723;
+    border-radius: 4px;
+}
+
+.shadow-wood {
+    background: rgba(#3E2723, .15);
+    pointer-events: none;
+    z-index: 4;
+}

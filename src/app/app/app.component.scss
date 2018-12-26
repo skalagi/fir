@@ -1,0 +1,15 @@
+:host {
+    display: flex;
+    flex-flow: column;
+    min-height: 100%;
+}
+
+footer {
+    text-align: right;
+    margin-top: auto;
+    padding: 64px 0;
+
+    a {
+        margin: 0 8px;
+    }
+}

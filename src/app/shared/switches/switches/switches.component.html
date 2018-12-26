@@ -1,0 +1,8 @@
+<div class="wood shadow"></div>
+
+<switch *ngFor="let channel of channels" class="shadow"
+  (toggle)="toggle($event)"
+  [state]="channel.state"
+  [identity]="channel.id" 
+  [label]="channel.name">
+</switch>

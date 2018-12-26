@@ -1,0 +1,67 @@
+:host {
+    width: 100%;
+}
+
+.hero {
+    display: grid;
+}
+
+nav {
+    position: sticky;
+    z-index: 4;
+    top: 0;
+    
+    mat-icon {
+        margin: 0 4px;
+        $size: 16px;
+        height: $size;
+        font-size: $size;
+        width: $size;
+    }
+}
+
+main {
+    &.isHomepage {
+        padding-right: 32px;
+    }
+
+    min-height: 420px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 96px;
+
+    h1, p, a {
+        margin: 0 32px;
+    }
+    h1 {
+        margin-top: 48px;
+    }
+}
+
+.noe {
+    display: none;
+}
+
+screen {
+    // overflow: hidden;
+    position: relative;
+    height: 420px;
+    flex-grow: 1;
+    top: 48px;
+}
+
+@media (max-width: 1200px) {
+    main {
+        text-align: center;
+
+        &.isHomepage {
+            padding-right: 0;
+        }
+    }
+
+    .isHomepage screen {
+        display: none;
+    }
+}

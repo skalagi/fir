@@ -1,13 +1,12 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$christmas-app-primary: mat-palette($mat-green);
-$christmas-app-accent: mat-palette($mat-cyan, A200, A100, A400);
+$christmas-app-primary: mat-palette($mat-red, 900);
+$christmas-app-accent: mat-palette($mat-light-green, 900);
 
-$christmas-app-theme: mat-light-theme($christmas-app-primary, $christmas-app-accent);
+$christmas-app-theme: mat-dark-theme($christmas-app-primary, $christmas-app-accent);
 
 @include angular-material-theme($christmas-app-theme);
-
 
 .warn {
   color: mat-color(mat-palette($mat-red));
@@ -17,14 +16,24 @@ $christmas-app-theme: mat-light-theme($christmas-app-primary, $christmas-app-acc
   color: mat-color($christmas-app-primary);
 }
 
+.primary-background {
+  background-color: mat-color($christmas-app-primary);
+}
+
+.accent-background {
+  background-color: mat-color($christmas-app-accent);
+}
+
 .accent {
   color: mat-color($christmas-app-accent);
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
+body, html {
+  height: 100%;
   width: 100%;
-  display: flex;
-  background-size: cover;
+  margin: 0;
+}
+
+.shadow {
+  filter: drop-shadow(0 0 1px rgba(#000, .25));  
 }

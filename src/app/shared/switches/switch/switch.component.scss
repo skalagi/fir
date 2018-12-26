@@ -1,0 +1,43 @@
+/*
+    .channel-0 {
+        width: 328px;
+        clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+    }
+*/
+
+.channel-0 {
+    width: 252px;    
+    clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+    .bauble {
+        background: whitesmoke;
+    }
+}
+
+.channel-1 {
+    width: 168px;
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0 100%);
+    .bauble {
+        background: red;
+    }
+}
+
+.channel-2 {
+    width: 96px;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    .bauble {
+        background: blue;
+    }
+}
+
+button {
+    height: 80px;
+}
+
+.bauble {
+    border-radius: 50%;
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    width: 24px;
+    height: 24px;
+}

@@ -1,0 +1,12 @@
+<div class="outlet">
+  <div class="colors-origin shadow">
+    <ng-template ngFor let-color [ngForOf]="pallette">
+        <div class="color">
+          <button mat-button class="color-drop" (click)="changeColor(color?.hex)"
+            [ngStyle]="{ backgroundColor: color?.hex }"></button>
+        </div>
+    </ng-template>
+  </div>
+  <div class="thumb" [ngStyle]="{ color: color, background: color, transform: thumbPosition }"
+    [ngClass]="{ 'null-direction': !thumbPosition }"></div>
+</div>

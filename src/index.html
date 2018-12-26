@@ -3,7 +3,7 @@
 <head>
   <base href="/">
   <meta charset="utf-8">
-  <title>Fir - Christmas lights control</title>
+  <title>Fir - Christmas lights controller</title>
   <meta name="theme-color" content="#4caf50">
   <meta property="og:image" content="https://lights.host/assets/winter.jpg" />
   <meta name="description" content="Control someone christmas lights by network! Awesome Christmas IoT project :)">
@@ -12,15 +12,25 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta property="og:title" content="Christmas iot project" />
+  <meta property="og:description" content="Automated christmas decorations which can be controlled from anywhere in the world." />
+  <meta property="og:image" content="https://tree18.live/assets/fir.png" />
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-131357409-1', 'auto');
+  </script>
 </head>
 <body>
-  <fir class="mat-elevation-z4">🎄</fir>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58565456-4"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-58565456-4');
-  </script>
+  <app class="mat-app-background"></app>
 </body>
 </html>

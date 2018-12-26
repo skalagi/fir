@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    & > * {
+        margin: 32px 0;
+    }
+}
+
+p {
+    margin: 24px 0;
+    text-align: center;
+}

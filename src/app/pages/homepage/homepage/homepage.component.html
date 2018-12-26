@@ -1,0 +1,17 @@
+<nav *ngIf="(url$ | async) === '/christmas'" class="primary-background">
+  <a routerLink="about" mat-button>
+    <mat-icon>help_outline</mat-icon>HELP
+  </a>
+</nav>
+
+<main class="primary-background shadow" [ngClass]="{ 'isHomepage': (url$ | async) !== '/christmas' }">
+  <div class="hero" *ngIf="(url$ | async) !== '/christmas'">
+    <h1 class="mat-display-3">Merry christmas</h1>
+    <p class="mat-subheading-2">Automated christmas decorations which can be controlled from anywhere in the world.</p>
+    <div>
+      <a routerLink="christmas" mat-stroked-button>START COMMANDING</a>
+      <a routerLinkActive='noe' routerLink="about" mat-stroked-button>READ MORE</a>
+    </div>
+  </div>
+  <screen></screen>
+</main>
